@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden’s Ticket</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap');
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .header-font { font-family: 'Playfair Display', serif; }
+        .iphone {
+            max-width: 380px;
+            margin: 40px auto;
+            border: 14px solid #111827;
+            border-radius: 52px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6);
+            background: #000;
+        }
+        .screen { display: none; }
+        .screen.active { display: block; }
+    </style>
+</head>
+<body class="bg-zinc-950 text-white py-8">
+    <div class="max-w-md mx-auto px-4">
+        <h1 class="text-center text-3xl font-bold header-font mb-8 flex items-center justify-center gap-3">
+            <span class="text-yellow-400">Golden’s</span> Ticket
+        </h1>
+
+        <!-- iPhone Container -->
+        <div class="iphone">
+            <!-- Status Bar -->
+            <div class="h-11 bg-black flex items-end justify-center text-[10px] text-white">
+                9:41
+            </div>
+
+            <!-- Screens -->
+            <div id="home" class="screen active bg-zinc-900 h-[520px] relative overflow-hidden">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-8">
+                        <img src="https://your-logo-url-here" alt="Golden’s" class="h-10"> <!-- Replace with actual logo if hosted -->
+                        <div class="text-right">
+                            <div class="text-sm font-semibold">Jeff</div>
+                        </div>
+                    </div>
+                    <div class="text-center mb-10">
+                        <div class="text-4xl font-bold header-font text-yellow-300">Your Golden’s Ticket</div>
+                        <div class="text-xl text-zinc-300">to Restaurant Success</div>
+                    </div>
+                    <div class="w-48 h-48 mx-auto relative mb-10">
+                        <svg class="w-full h-full -rotate-12" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="#3f3f46" stroke-width="10"/>
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="#eab308" stroke-width="10" stroke-dasharray="282" stroke-dashoffset="110" stroke-linecap="round"/>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center text-center">
+                            <div>
+                                <div class="text-5xl font-bold text-yellow-400">62%</div>
+                                <div class="text-xs uppercase tracking-widest text-zinc-400">Pre-Opening</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-3">
+                        <div onclick="switchScreen('blueprint')" class="bg-zinc-800 hover:bg-zinc-700 p-4 rounded-3xl text-center cursor-pointer">
+                            <i class="fa-solid fa-list-check text-3xl text-yellow-400 mb-2"></i>
+                            <div class="text-xs">Blueprint</div>
+                        </div>
+                        <div onclick="switchScreen('compliance')" class="bg-zinc-800 hover:bg-zinc-700 p-4 rounded-3xl text-center cursor-pointer">
+                            <i class="fa-solid fa-shield-halved text-3xl text-emerald-400 mb-2"></i>
+                            <div class="text-xs">Compliance</div>
+                        </div>
+                        <div onclick="switchScreen('launch')" class="bg-zinc-800 hover:bg-zinc-700 p-4 rounded-3xl text-center cursor-pointer">
+                            <i class="fa-solid fa-rocket text-3xl text-rose-400 mb-2"></i>
+                            <div class="text-xs">Launch</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blueprint Screen -->
+            <div id="blueprint" class="screen bg-zinc-900 h-[520px] p-6 overflow-auto">
+                <div class="flex justify-between items-center mb-6">
+                    <div class="text-xl font-semibold">Pre-Opening Blueprint</div>
+                    <div class="text-sm text-yellow-400">12/27</div>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-zinc-800 p-4 rounded-2xl flex items-center gap-4">
+                        <input type="checkbox" checked class="accent-yellow-400 w-5 h-5">
+                        <div class="flex-1">Business Entity &amp; EIN</div>
+                    </div>
+                    <div class="bg-zinc-800 p-4 rounded-2xl flex items-center gap-4">
+                        <input type="checkbox" checked class="accent-yellow-400 w-5 h-5">
+                        <div class="flex-1">Health Department Permit</div>
+                    </div>
+                    <div class="bg-zinc-800 p-4 rounded-2xl flex items-center gap-4">
+                        <input type="checkbox" class="accent-yellow-400 w-5 h-5">
+                        <div class="flex-1">Menu Development &amp; Costing</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compliance Screen -->
+            <div id="compliance" class="screen bg-zinc-900 h-[520px] p-6 overflow-auto">
+                <div class="text-xl font-semibold mb-6">Compliance Hub</div>
+                <div class="space-y-4">
+                    <div class="bg-emerald-900/30 border border-emerald-500 p-5 rounded-3xl">
+                        <div class="font-medium">Health Permit Tracker</div>
+                        <div class="text-emerald-400 text-sm mt-1">In Progress • Oneida County</div>
+                    </div>
+                    <div class="bg-zinc-800 p-5 rounded-3xl">
+                        <div class="font-medium">Food Protection Cert Prep</div>
+                        <button onclick="alert('Quiz started (demo)')" class="mt-3 bg-yellow-400 text-black px-6 py-2 rounded-2xl text-sm font-semibold">Start Quiz</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Launch Screen -->
+            <div id="launch" class="screen bg-zinc-900 h-[520px] p-6 text-center flex flex-col items-center justify-center">
+                <div class="text-6xl mb-6">🚀</div>
+                <div class="text-2xl font-semibold mb-2">Launch Playbook</div>
+                <div class="text-zinc-400">First 30 days optimizer ready in full version</div>
+            </div>
+        </div>
+
+        <!-- Bottom Nav -->
+        <div class="flex justify-around text-xs text-zinc-400 max-w-[380px] mx-auto mt-6 border-t border-zinc-800 pt-4">
+            <button onclick="switchScreen('home')" class="flex flex-col items-center active:text-yellow-400">🏠 Home</button>
+            <button onclick="switchScreen('blueprint')" class="flex flex-col items-center active:text-yellow-400">📋 Blueprint</button>
+            <button onclick="switchScreen('compliance')" class="flex flex-col items-center active:text-yellow-400">🛡️ Compliance</button>
+            <button onclick="switchScreen('launch')" class="flex flex-col items-center active:text-yellow-400">🚀 Launch</button>
+        </div>
+    </div>
+
+    <script>
+        function switchScreen(id) {
+            document.querySelectorAll('.screen').forEach(screen => screen.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+</body>
+</html>
