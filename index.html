@@ -8,7 +8,8 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <meta property="og:title" content="Golden Ticket" />
   <meta property="og:description" content="Launch the restaurant. Stay open." />
-  <meta property="og:image" content="og.jpg" />
+  <meta property="og:image" content="https://jagtech00-source.github.io/Golden-Ticket/og.jpg" />
+  <meta property="og:url" content="https://jagtech00-source.github.io/Golden-Ticket/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -92,7 +93,21 @@
       <a class="btn" href="#/assessment">Free assessment</a>
     </div>
   </header>
-  <div id="root"></div>
+  <div id="root">
+    <section class="hero"><div class="wrap grid2">
+      <div>
+        <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);font-weight:700">New York · Golden Rule Consulting</div>
+        <h1>Launch the restaurant.<span class="gold"> Stay open.</span></h1>
+        <p style="color:rgba(251,247,240,.75);max-width:520px;line-height:1.6">Golden Ticket Assessment — LLC to first 30 days, plus 20 operational playbooks. Built by Chef Jeff Golden from a 16-seat diner in Utica.</p>
+        <p style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px">
+          <a class="btn" href="#/app">Open the platform</a>
+          <a class="btn ghost" style="color:var(--cream);border-color:rgba(255,255,255,.25)" href="#/playbooks">20 playbooks</a>
+          <a class="btn ghost" style="color:var(--cream);border-color:rgba(255,255,255,.25)" href="#/assessment">Free readiness score</a>
+        </p>
+      </div>
+      <img class="cover" src="og.jpg" alt="Golden Ticket" />
+    </div></section>
+  </div>
   <footer>
     <div class="wrap">
       <p><b class="gold">Golden Ticket</b> · Golden Rule Consulting · Chef Jeff Golden · Utica, New York</p>
@@ -119,7 +134,12 @@ if (!state.pb) state.pb = {};
       return Math.round((n / DATA.TASKS.length) * 100);
     }
     function esc(s) {
-      return String(s).replace(/[&<>"']/g, c => ({"&":"&","<":"<",">":">","\"":""","'":"&#39;"}[c]));
+      return String(s)
+        .replace(/&/g, "&" + "amp;")
+        .replace(/</g, "&" + "lt;")
+        .replace(/>/g, "&" + "gt;")
+        .replace(/"/g, "&" + "quot;")
+        .replace(/'/g, "&#39;");
     }
     function layout(inner) {
       const links = [
@@ -174,6 +194,36 @@ if (!state.pb) state.pb = {};
             <p class="muted" style="font-size:13px">${esc(p.summary)}</p>
             <p style="font-weight:600;color:var(--navy);margin:8px 0 0">Open full instructions →</p>
           </a>`).join("")}
+        </div>
+      </section>
+      <section style="background:var(--navy);color:var(--cream);padding:56px 0">
+        <div class="wrap">
+          <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);font-weight:700">Inside the ticket</div>
+          <h2 style="font-size:34px;margin:12px 0">Everything from opening to operating.</h2>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:20px">
+            <div class="card" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1);color:var(--cream)"><h3>Pre-opening blueprint</h3><p style="opacity:.7">Nine phases, fifty-plus tasks: entity, site, health, kitchen, menu, people, pre-open, first 30 days.</p></div>
+            <div class="card" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1);color:var(--cream)"><h3>Permit timeline</h3><p style="opacity:.7">NY filings in order, with honest wait times and what each one depends on.</p></div>
+            <div class="card" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1);color:var(--cream)"><h3>Inspection simulator</h3><p style="opacity:.7">Score the room like a sanitarian. Criticals first. Fix list generated as you tap.</p></div>
+            <div class="card" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1);color:var(--cream)"><h3>Line playbooks</h3><p style="opacity:.7">Twenty complete clickable procedures — storage, temps, cooling, allergens, solo-operator survival, inspection day.</p></div>
+            <div class="card" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1);color:var(--cream)"><h3>Food protection quiz</h3><p style="opacity:.7">Twelve questions from the code Jeff taught and still works.</p></div>
+            <div class="card" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1);color:var(--cream)"><h3>Readiness assessment</h3><p style="opacity:.7">A real score from your answers — not a dummy number for everyone.</p></div>
+          </div>
+          <p style="margin-top:24px"><a class="btn" href="#/app">Work the platform</a></p>
+        </div>
+      </section>
+      <section class="wrap" style="padding:56px 16px">
+        <div class="grid2">
+          <div>
+            <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700">The lab</div>
+            <h2 style="font-size:34px;color:var(--navy)">Golden's Food, Utica.</h2>
+            <p class="muted">244 Genesee Street. Sixteen seats. Breakfast and lunch. One operator. The platform is not a deck. It is the system behind a room that is still open.</p>
+            <p><a class="btn navy" href="#/about">Meet Jeff</a></p>
+          </div>
+          <div class="card">
+            <img src="logo.jpg" alt="" style="width:72px;height:72px;border-radius:16px;object-fit:cover" />
+            <h3 style="color:var(--navy);font-size:26px;margin-top:16px">Most new places don't fail because of bad food. They fail because of bad systems.</h3>
+            <p class="muted">Jeff Golden · Golden Rule Consulting</p>
+          </div>
         </div>
       </section>`;
     }
