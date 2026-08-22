@@ -1,887 +1,352 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Golden Rule Consulting | Restaurant Launch Success Platform — New York State</title>
-    <meta name="description" content="The Golden Rule for launching and sustaining successful restaurants in New York. Expert compliance tools, pre-inspection guidance, permitting timelines, and operational playbooks built by a 40+ year NY hospitality veteran. Partner with Empire State Development to reduce restaurant failure rates.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Inter:wght@300;400;500;600&amp;display=swap');
-        
-        :root {
-            --gold: #C9A227;
-            --navy: #0A2540;
-        }
-        
-        .tail-container {
-            font-family: 'Inter', system_ui, sans-serif;
-        }
-        
-        .heading-serif {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-weight: 700;
-            line-height: 1.1;
-        }
-
-        .gold-accent {
-            color: #C9A227;
-        }
-
-        .section-header {
-            font-size: 2.25rem;
-            line-height: 2.5rem;
-            font-weight: 700;
-            color: #0A2540;
-        }
-
-        .nav-link {
-            transition: color 0.2s ease;
-        }
-        
-        .nav-link:hover {
-            color: #C9A227;
-        }
-
-        .feature-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-        }
-
-        .step-number {
-            width: 2.75rem;
-            height: 2.75rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.125rem;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            line-height: 2.75rem;
-            font-weight: 700;
-            color: #0A2540;
-        }
-
-        .gold-btn {
-            background-color: #C9A227;
-            color: white;
-            transition: all 0.3s ease;
-        }
-        
-        .gold-btn:hover {
-            background-color: #B38B1E;
-            transform: translateY(-1px);
-        }
-
-        .navy-btn {
-            background-color: #0A2540;
-            color: white;
-            transition: all 0.3s ease;
-        }
-        
-        .navy-btn:hover {
-            background-color: #061A2E;
-        }
-
-        .hero-overlay {
-            background: linear-gradient(to right, rgba(10, 37, 64, 0.85), rgba(10, 37, 64, 0.65));
-        }
-
-        .metric-card {
-            background: white;
-            border: 1px solid #E2E8F0;
-        }
-
-        .platform-pill {
-            background: linear-gradient(90deg, #C9A227, #E8D48A);
-            color: #0A2540;
-            font-weight: 600;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Golden Ticket · Restaurant Launch Platform</title>
+  <meta name="description" content="Golden Ticket is the restaurant launch sequence built by Chef Jeff Golden — from the LLC to the first 30 days, for New York operators." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <meta property="og:title" content="Golden Ticket" />
+  <meta property="og:description" content="Launch the restaurant. Stay open." />
+  <meta property="og:image" content="og.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink:#12151a; --navy:#0c1f33; --paper:#f4efe6; --cream:#fbf7f0;
+      --gold:#b68a2a; --gold-soft:#e4d3a2; --fg:#1c1915; --muted:#6b6458;
+      --line:#ddd3c3; --ok:#3d6b4f; --danger:#8f3a32; --card:#fffdf8;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-font-smoothing: antialiased; }
+    body { margin:0; font-family:"Source Sans 3", system-ui, sans-serif; background:var(--paper); color:var(--fg); }
+    h1,h2,h3 { font-family: Fraunces, Georgia, serif; text-wrap: balance; }
+    a { color: inherit; }
+    button, [role=button] { cursor: pointer; font-family: inherit; }
+    header.top { position: sticky; top:0; z-index:20; background: rgba(251,247,240,.92); backdrop-filter: blur(10px); border-bottom:1px solid var(--line); }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+    .row { display:flex; align-items:center; justify-content:space-between; height:64px; gap:16px; }
+    .brand { display:flex; align-items:center; gap:10px; text-decoration:none; }
+    .brand img { width:36px; height:36px; border-radius:8px; object-fit:cover; }
+    .brand b { display:block; font-family:Fraunces,serif; color:var(--navy); }
+    .brand small { display:block; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); font-size:10px; font-weight:700; }
+    nav.top a { margin-left:18px; font-size:14px; font-weight:600; color:var(--muted); text-decoration:none; }
+    nav.top a:hover, nav.top a.on { color:var(--navy); }
+    .btn { display:inline-flex; align-items:center; gap:8px; height:44px; padding:0 18px; border-radius:12px; border:0; background:var(--gold); color:var(--navy); font-weight:600; text-decoration:none; }
+    .btn.navy { background:var(--navy); color:var(--cream); }
+    .btn.ghost { background:transparent; border:1px solid var(--line); color:var(--fg); }
+    .hero { background:var(--navy); color:var(--cream); padding: 64px 0; }
+    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height:1.08; margin: 16px 0; }
+    .gold { color: var(--gold-soft); }
+    .grid2 { display:grid; gap:28px; grid-template-columns: 1.1fr .9fr; }
+    .hero img.cover { width:100%; border-radius:28px; border:1px solid rgba(255,255,255,.1); }
+    .muted { color: var(--muted); }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:20px; padding:20px; }
+    .layout { display:grid; grid-template-columns: 240px 1fr; gap:24px; padding: 24px 0 64px; }
+    aside.board { position: sticky; top: 88px; border:1px solid var(--line); background:var(--card); border-radius:24px; padding:16px; }
+    aside.board a { display:block; height:40px; line-height:40px; padding:0 12px; border-radius:12px; text-decoration:none; font-size:14px; font-weight:600; color:var(--muted); }
+    aside.board a.on, aside.board a:hover { background:var(--navy); color:var(--cream); }
+    .task { border:1px solid var(--line); background:var(--card); border-radius:20px; padding:16px; margin: 10px 0; }
+    .check { width:22px; height:22px; border-radius:6px; border:1px solid var(--line); background:var(--cream); }
+    .check.on { background:var(--ok); border-color:var(--ok); }
+    footer { background:var(--navy); color:var(--cream); padding: 40px 0 20px; font-size:14px; }
+    footer a { color: var(--gold-soft); }
+    @media (max-width: 840px) {
+      .grid2, .layout { grid-template-columns: 1fr; }
+      nav.top { display:none; }
+      aside.board { position: static; display:grid; grid-template-columns: 1fr 1fr; }
+    }
+  </style>
 </head>
-<body class="tail-container bg-slate-50 text-slate-800">
-    <!-- NAV -->
-    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
-        <div class="max-w-screen-2xl mx-auto">
-            <div class="px-8 py-5 flex items-center justify-between">
-                <div class="flex items-center gap-x-3">
-                    <img src="logo.jpg" alt="Golden Rule Consulting Logo" class="h-11 w-auto rounded-sm shadow-sm">
-                    <div>
-                        <span class="font-semibold text-2xl tracking-tighter text-[#0A2540]">Golden Rule</span>
-                        <span class="text-xs font-medium tracking-[2px] text-[#C9A227] block -mt-1">CONSULTING</span>
-                    </div>
-                </div>
-
-                <!-- Desktop Nav -->
-                <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
-                    <a href="#platform" class="nav-link text-slate-700 hover:text-[#C9A227]">The Platform</a>
-                    <a href="#how" class="nav-link text-slate-700 hover:text-[#C9A227]">How It Works</a>
-                    <a href="#impact" class="nav-link text-slate-700 hover:text-[#C9A227]">Impact</a>
-                    <a href="#partners" class="nav-link text-slate-700 hover:text-[#C9A227]">For ESD &amp; Partners</a>
-                </div>
-
-                <div class="hidden md:flex items-center gap-x-3">
-                    <button onclick="showDemoModal()"
-                            class="px-5 py-2.5 text-sm font-semibold border border-slate-300 hover:bg-slate-100 rounded-xl transition-colors">
-                        Request Demo
-                    </button>
-                    <button onclick="startAssessment()"
-                            class="gold-btn px-6 py-2.5 text-sm font-semibold rounded-xl shadow-sm flex items-center gap-x-2">
-                        <i class="fas fa-clipboard-check"></i>
-                        <span>Start Free Assessment</span>
-                    </button>
-                </div>
-
-                <!-- Mobile Menu -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-btn"
-                            class="w-10 h-10 flex items-center justify-center text-slate-700 hover:bg-slate-100 rounded-xl"
-                            onclick="toggleMobileMenu()">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden border-t bg-white px-6 py-4">
-            <div class="flex flex-col gap-y-3 text-sm font-medium">
-                <a href="#platform" class="py-2 text-slate-700">The Platform</a>
-                <a href="#how" class="py-2 text-slate-700">How It Works</a>
-                <a href="#impact" class="py-2 text-slate-700">Impact</a>
-                <a href="#partners" class="py-2 text-slate-700">For ESD &amp; Partners</a>
-                <div class="pt-3 border-t flex flex-col gap-y-3">
-                    <button onclick="showDemoModal()" 
-                            class="w-full py-3 text-sm font-semibold border border-slate-300 rounded-xl">Request Demo</button>
-                    <button onclick="startAssessment()" 
-                            class="w-full gold-btn py-3 text-sm font-semibold rounded-xl flex items-center justify-center gap-x-2">
-                        <i class="fas fa-clipboard-check"></i>
-                        <span>Start Free Assessment</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- HERO -->
-    <header class="relative h-[620px] md:h-[680px] flex items-center overflow-hidden">
-        <img src="hero.jpg" alt="Successful restaurant launch celebration with team toasting" 
-             class="absolute inset-0 w-full h-full object-cover">
-        
-        <div class="hero-overlay absolute inset-0"></div>
-        
-        <div class="relative max-w-screen-2xl mx-auto px-8 md:px-12 z-10">
-            <div class="max-w-3xl">
-                <div class="inline-flex items-center gap-x-2 bg-white/90 backdrop-blur px-4 py-1.5 rounded-full mb-6 shadow-sm">
-                    <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-                    <span class="text-xs font-semibold tracking-widest text-[#0A2540]">NEW YORK STATE • EMPIRE STATE DEVELOPMENT ALIGNED</span>
-                </div>
-                
-                <h1 class="text-white text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tighter font-bold heading-serif mb-6">
-                    Launch Your Restaurant.<br>
-                    <span class="gold-accent">The Golden Rule Way.</span>
-                </h1>
-                
-                <p class="max-w-xl text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
-                    The complete platform and expert guidance to navigate New York permitting, pass health inspections on the first try, and build an operation built to last. Created by a 40-year NY hospitality veteran.
-                </p>
-                
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <button onclick="startAssessment()"
-                            class="gold-btn px-8 py-4 text-base font-semibold rounded-2xl flex items-center justify-center gap-x-3 shadow-xl text-lg">
-                        <i class="fas fa-rocket"></i>
-                        <span>Start Your Free Launch Assessment</span>
-                    </button>
-                    
-                    <button onclick="document.getElementById('partners').scrollIntoView({ behavior: 'smooth' })"
-                            class="px-8 py-4 text-base font-semibold border-2 border-white/70 hover:bg-white/10 text-white rounded-2xl flex items-center justify-center gap-x-3 transition-colors">
-                        <span>Partner with Us (ESD &amp; Agencies)</span>
-                    </button>
-                </div>
-                
-                <div class="mt-8 flex items-center gap-x-6 text-sm text-white/70">
-                    <div class="flex -space-x-2">
-                        <div class="w-7 h-7 bg-white/30 rounded-full border border-white/50"></div>
-                        <div class="w-7 h-7 bg-white/30 rounded-full border border-white/50"></div>
-                        <div class="w-7 h-7 bg-white/30 rounded-full border border-white/50"></div>
-                    </div>
-                    <span class="text-xs tracking-wider">Trusted by forward-thinking NY operators &amp; economic developers</span>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- TRUST BAR -->
-    <div class="bg-white border-b">
-        <div class="max-w-screen-2xl mx-auto px-8 py-5">
-            <div class="flex flex-wrap justify-center items-center gap-x-10 gap-y-3 opacity-75">
-                <div class="text-xs font-semibold tracking-[1.5px] text-slate-500">ALIGNED WITH</div>
-                <div class="font-semibold text-slate-700">Empire State Development</div>
-                <div class="hidden md:block w-px h-3 bg-slate-300"></div>
-                <div class="font-semibold text-slate-700">NYS Department of Health</div>
-                <div class="hidden md:block w-px h-3 bg-slate-300"></div>
-                <div class="font-semibold text-slate-700">County Health Departments</div>
-                <div class="hidden md:block w-px h-3 bg-slate-300"></div>
-                <div class="font-semibold text-slate-700">NYS Liquor Authority</div>
-            </div>
-        </div>
+<body>
+  <header class="top">
+    <div class="wrap row">
+      <a class="brand" href="#/">
+        <img src="logo.jpg" alt="" />
+        <span><b>Golden Ticket</b><small>Launch platform</small></span>
+      </a>
+      <nav class="top">
+        <a href="#/">Home</a>
+        <a href="#/app">The Ticket</a>
+        <a href="#/about">Jeff Golden</a>
+        <a href="#/partners">ESD & partners</a>
+        <a href="#/contact">Book Jeff</a>
+      </nav>
+      <a class="btn" href="#/assessment">Free assessment</a>
     </div>
-
-    <!-- PROBLEM / WHY IT MATTERS -->
-    <section class="max-w-screen-2xl mx-auto px-8 pt-16 pb-12">
-        <div class="max-w-3xl mx-auto text-center mb-12">
-            <div class="inline-block px-4 py-1 bg-amber-100 text-amber-700 text-xs font-bold tracking-[1.5px] rounded-full mb-4">THE REALITY</div>
-            <h2 class="section-header">New restaurants face a brutal launch environment in New York.</h2>
-            <p class="mt-4 text-lg text-slate-600">Complex regulations, multi-agency permitting, and high operational standards create hidden landmines that sink even the best concepts.</p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <div class="metric-card p-7 rounded-3xl">
-                <div class="flex items-baseline gap-x-1">
-                    <span class="stat-number">25-30%</span>
-                </div>
-                <p class="text-slate-600 mt-1">of new restaurants close within the <span class="font-semibold">first year</span> (industry studies)</p>
-                <div class="mt-4 text-sm text-slate-500">Many failures are <span class="font-medium text-amber-600">preventable</span> with proper compliance preparation.</div>
-            </div>
-            
-            <div class="metric-card p-7 rounded-3xl">
-                <div class="flex items-baseline gap-x-1">
-                    <span class="stat-number">60%+</span>
-                </div>
-                <p class="text-slate-600 mt-1">fail to survive <span class="font-semibold">five years</span></p>
-                <div class="mt-4 text-sm text-slate-500">The #1 silent killers: permitting delays, failed inspections, and operational gaps that surface after opening.</div>
-            </div>
-            
-            <div class="metric-card p-7 rounded-3xl bg-[#0A2540] text-white">
-                <div class="uppercase text-xs tracking-[1.5px] text-white/60 mb-2">GOLDEN RULE GOAL</div>
-                <div class="text-3xl font-bold leading-none">Dramatically increase<br>first-year survival rates</div>
-                <p class="mt-4 text-white/80 text-sm">By giving owners everything they need — before they ever open the doors.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- THE PLATFORM -->
-    <section id="platform" class="bg-white py-16 border-t">
-        <div class="max-w-screen-2xl mx-auto px-8">
-            <div class="flex flex-col lg:flex-row gap-12 items-start">
-                <div class="lg:w-5/12">
-                    <div class="sticky top-24">
-                        <div class="platform-pill inline-block px-4 py-1 text-xs tracking-[1.5px] rounded-full mb-4">THE COMPLETE SOLUTION</div>
-                        <h2 class="section-header leading-none">The Restaurant Launch<br>Success Platform</h2>
-                        <p class="mt-5 text-lg text-slate-600">Everything a new or expanding restaurant needs to open successfully in New York State — in one integrated system.</p>
-                        
-                        <div class="mt-8 flex items-center gap-x-4 text-sm">
-                            <div class="flex items-center text-emerald-600">
-                                <i class="fas fa-check-circle mr-2"></i>
-                                <span class="font-medium">Built by operators, for operators</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="lg:w-7/12 grid sm:grid-cols-2 gap-5">
-                    <!-- Feature 1 -->
-                    <div class="feature-card bg-slate-50 border border-slate-100 p-6 rounded-3xl">
-                        <div class="w-11 h-11 flex items-center justify-center bg-white shadow-sm rounded-2xl mb-4 text-[#C9A227]">
-                            <i class="fas fa-tasks fa-lg"></i>
-                        </div>
-                        <h4 class="font-semibold text-xl tracking-tight">Interactive Compliance Checklists</h4>
-                        <p class="mt-2 text-sm text-slate-600 leading-relaxed">NY State + county-specific health department checklists. Pre-built for your exact location and concept type. Track progress in real time.</p>
-                    </div>
-                    
-                    <!-- Feature 2 -->
-                    <div class="feature-card bg-slate-50 border border-slate-100 p-6 rounded-3xl">
-                        <div class="w-11 h-11 flex items-center justify-center bg-white shadow-sm rounded-2xl mb-4 text-[#C9A227]">
-                            <i class="fas fa-clipboard-check fa-lg"></i>
-                        </div>
-                        <h4 class="font-semibold text-xl tracking-tight">Pre-Inspection Readiness Score</h4>
-                        <p class="mt-2 text-sm text-slate-600 leading-relaxed">Simulate a real health inspection. Get a score, prioritized fix list, and photo-guided best practices so you pass on the first try.</p>
-                    </div>
-                    
-                    <!-- Feature 3 -->
-                    <div class="feature-card bg-slate-50 border border-slate-100 p-6 rounded-3xl">
-                        <div class="w-11 h-11 flex items-center justify-center bg-white shadow-sm rounded-2xl mb-4 text-[#C9A227]">
-                            <i class="fas fa-calendar-alt fa-lg"></i>
-                        </div>
-                        <h4 class="font-semibold text-xl tracking-tight">Permitting Timeline Tracker</h4>
-                        <p class="mt-2 text-sm text-slate-600 leading-relaxed">Know every permit, inspection, and approval needed — from Certificate of Occupancy to Health Permit to Liquor License — with realistic timelines and dependencies mapped.</p>
-                    </div>
-                    
-                    <!-- Feature 4 -->
-                    <div class="feature-card bg-slate-50 border border-slate-100 p-6 rounded-3xl">
-                        <div class="w-11 h-11 flex items-center justify-center bg-white shadow-sm rounded-2xl mb-4 text-[#C9A227]">
-                            <i class="fas fa-shield-alt fa-lg"></i>
-                        </div>
-                        <h4 class="font-semibold text-xl tracking-tight">Critical Operational Playbooks</h4>
-                        <p class="mt-2 text-sm text-slate-600 leading-relaxed">Step-by-step guides for food safety systems, staff training, documentation, pest prevention, temperature control, and the exact records inspectors want to see.</p>
-                    </div>
-                    
-                    <!-- Feature 5 -->
-                    <div class="feature-card bg-slate-50 border border-slate-100 p-6 rounded-3xl">
-                        <div class="w-11 h-11 flex items-center justify-center bg-white shadow-sm rounded-2xl mb-4 text-[#C9A227]">
-                            <i class="fas fa-exclamation-triangle fa-lg"></i>
-                        </div>
-                        <h4 class="font-semibold text-xl tracking-tight">Pitfall Prevention Alerts</h4>
-                        <p class="mt-2 text-sm text-slate-600 leading-relaxed">Real-world intelligence on the most common (and expensive) reasons restaurants fail inspections or get delayed — with instant alerts and fixes.</p>
-                    </div>
-                    
-                    <!-- Feature 6 -->
-                    <div class="feature-card bg-slate-50 border border-slate-100 p-6 rounded-3xl">
-                        <div class="w-11 h-11 flex items-center justify-center bg-white shadow-sm rounded-2xl mb-4 text-[#C9A227]">
-                            <i class="fas fa-handshake fa-lg"></i>
-                        </div>
-                        <h4 class="font-semibold text-xl tracking-tight">ESD &amp; Grant Integration Hub</h4>
-                        <p class="mt-2 text-sm text-slate-600 leading-relaxed">Direct links and guidance on Empire State Development programs, small business resources, and funding opportunities that support new hospitality ventures.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section id="how" class="max-w-screen-2xl mx-auto px-8 py-16 bg-slate-900 text-white rounded-[3rem] my-8 mx-4 md:mx-8">
-        <div class="max-w-2xl mx-auto text-center mb-12">
-            <div class="text-[#C9A227] text-xs tracking-[2px] font-semibold mb-3">SIMPLE • POWERFUL • PROVEN</div>
-            <h2 class="text-4xl font-bold tracking-tighter">How the Golden Rule Platform Works</h2>
-        </div>
-        
-        <div class="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            <div class="bg-white/5 backdrop-blur p-7 rounded-3xl border border-white/10">
-                <div class="step-number bg-[#C9A227] text-[#0A2540] rounded-2xl mb-6 text-xl font-bold">1</div>
-                <h4 class="font-semibold text-xl mb-2">Assess Your Readiness</h4>
-                <p class="text-white/70 text-sm leading-relaxed">Complete our free Launch Readiness Assessment. Get an instant snapshot of where you stand on compliance, operations, and permitting.</p>
-            </div>
-            
-            <div class="bg-white/5 backdrop-blur p-7 rounded-3xl border border-white/10">
-                <div class="step-number bg-[#C9A227] text-[#0A2540] rounded-2xl mb-6 text-xl font-bold">2</div>
-                <h4 class="font-semibold text-xl mb-2">Receive Your Custom Roadmap</h4>
-                <p class="text-white/70 text-sm leading-relaxed">We generate a personalized step-by-step plan with timelines, required documents, and prioritized action items tailored to your location and concept.</p>
-            </div>
-            
-            <div class="bg-white/5 backdrop-blur p-7 rounded-3xl border border-white/10">
-                <div class="step-number bg-[#C9A227] text-[#0A2540] rounded-2xl mb-6 text-xl font-bold">3</div>
-                <h4 class="font-semibold text-xl mb-2">Execute with Confidence</h4>
-                <p class="text-white/70 text-sm leading-relaxed">Use interactive checklists, training modules, and real-time alerts. Schedule virtual guidance sessions with our team as needed.</p>
-            </div>
-            
-            <div class="bg-white/5 backdrop-blur p-7 rounded-3xl border border-white/10">
-                <div class="step-number bg-[#C9A227] text-[#0A2540] rounded-2xl mb-6 text-xl font-bold">4</div>
-                <h4 class="font-semibold text-xl mb-2">Launch &amp; Thrive</h4>
-                <p class="text-white/70 text-sm leading-relaxed">Open with everything in place. Continue using the platform for ongoing compliance monitoring, staff training refreshers, and growth support.</p>
-            </div>
-        </div>
-        
-        <div class="text-center mt-10">
-            <button onclick="startAssessment()" 
-                    class="inline-flex items-center gap-x-3 bg-white text-[#0A2540] hover:bg-amber-50 px-8 py-3.5 rounded-2xl font-semibold transition-colors">
-                <span>Begin Your Free Assessment Now</span>
-                <i class="fas fa-arrow-right"></i>
-            </button>
-        </div>
-    </section>
-
-    <!-- IMPACT -->
-    <section id="impact" class="max-w-screen-2xl mx-auto px-8 py-16">
-        <div class="max-w-3xl mx-auto text-center mb-12">
-            <h2 class="section-header">Real Impact for New York Restaurants &amp; Communities</h2>
-            <p class="mt-4 text-lg text-slate-600">When restaurants launch successfully, everyone wins — owners, employees, local economies, and the State of New York.</p>
-        </div>
-        
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="p-8 bg-white rounded-3xl border">
-                <i class="fas fa-chart-line text-3xl text-emerald-500 mb-5"></i>
-                <div class="font-bold text-4xl tracking-tighter">Higher Survival</div>
-                <p class="mt-2 text-slate-600">Significantly reduce first-year closures by addressing the exact issues that cause most failures before they happen.</p>
-            </div>
-            <div class="p-8 bg-white rounded-3xl border">
-                <i class="fas fa-users text-3xl text-emerald-500 mb-5"></i>
-                <div class="font-bold text-4xl tracking-tighter">Jobs &amp; Economic Growth</div>
-                <p class="mt-2 text-slate-600">Every successful restaurant supports 10–25+ jobs and contributes meaningfully to local tax base and tourism.</p>
-            </div>
-            <div class="p-8 bg-white rounded-3xl border">
-                <i class="fas fa-shield-alt text-3xl text-emerald-500 mb-5"></i>
-                <div class="font-bold text-4xl tracking-tighter">Fewer Failed Inspections</div>
-                <p class="mt-2 text-slate-600">Operators arrive prepared. Health departments spend less time on re-inspections and more on high-value work.</p>
-            </div>
-            <div class="p-8 bg-white rounded-3xl border">
-                <i class="fas fa-handshake text-3xl text-emerald-500 mb-5"></i>
-                <div class="font-bold text-4xl tracking-tighter">Stronger ESD Outcomes</div>
-                <p class="mt-2 text-slate-600">Direct alignment with Empire State Development’s mission to grow small businesses and strengthen New York’s hospitality sector.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOR ESD & PARTNERS -->
-    <section id="partners" class="bg-[#0A2540] text-white py-16 rounded-[3rem] mx-4 md:mx-8">
-        <div class="max-w-screen-2xl mx-auto px-8 md:px-12">
-            <div class="grid lg:grid-cols-12 gap-x-12 items-center">
-                <div class="lg:col-span-7">
-                    <div class="uppercase tracking-[2px] text-[#C9A227] text-xs font-bold mb-3">FOR GOVERNMENT &amp; ECONOMIC DEVELOPMENT LEADERS</div>
-                    <h2 class="text-4xl lg:text-5xl font-bold tracking-tighter leading-none">A Strategic Tool for Empire State Development</h2>
-                    <p class="mt-5 text-lg text-white/80 max-w-xl">The Golden Rule Restaurant Launch Success Platform directly supports ESD’s goals of reducing small business failure rates, creating sustainable jobs, and strengthening New York’s restaurant and hospitality ecosystem.</p>
-                    
-                    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-                        <div class="flex gap-x-3">
-                            <i class="fas fa-check text-[#C9A227] mt-1"></i>
-                            <div>Scalable statewide solution for new restaurant support</div>
-                        </div>
-                        <div class="flex gap-x-3">
-                            <i class="fas fa-check text-[#C9A227] mt-1"></i>
-                            <div>Measurable impact on first-year survival metrics</div>
-                        </div>
-                        <div class="flex gap-x-3">
-                            <i class="fas fa-check text-[#C9A227] mt-1"></i>
-                            <div>Complements existing ESD small business programs</div>
-                        </div>
-                        <div class="flex gap-x-3">
-                            <i class="fas fa-check text-[#C9A227] mt-1"></i>
-                            <div>Ready for pilot programs in key regions</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="lg:col-span-5 mt-10 lg:mt-0 bg-white/5 p-8 rounded-3xl border border-white/10">
-                    <div class="font-semibold text-lg mb-4">Ideal for:</div>
-                    <ul class="space-y-3 text-white/90">
-                        <li class="flex gap-x-3"><i class="fas fa-arrow-right mt-1.5 text-[#C9A227]"></i> ESD Small Business Division initiatives</li>
-                        <li class="flex gap-x-3"><i class="fas fa-arrow-right mt-1.5 text-[#C9A227]"></i> Regional economic development councils</li>
-                        <li class="flex gap-x-3"><i class="fas fa-arrow-right mt-1.5 text-[#C9A227]"></i> County &amp; municipal business support programs</li>
-                        <li class="flex gap-x-3"><i class="fas fa-arrow-right mt-1.5 text-[#C9A227]"></i> Workforce development &amp; hospitality training partners</li>
-                        <li class="flex gap-x-3"><i class="fas fa-arrow-right mt-1.5 text-[#C9A227]"></i> Chambers of Commerce &amp; tourism boards</li>
-                    </ul>
-                    
-                    <button onclick="showDemoModal()"
-                            class="mt-8 w-full gold-btn py-3.5 rounded-2xl font-semibold flex items-center justify-center gap-x-2 text-base">
-                        <span>Schedule a Partnership Discussion</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TESTIMONIALS / SOCIAL PROOF -->
-    <section class="max-w-screen-2xl mx-auto px-8 py-16">
-        <div class="text-center mb-10">
-            <h3 class="text-sm uppercase tracking-[2px] text-slate-500 font-semibold">WHAT OPERATORS &amp; LEADERS ARE SAYING</h3>
-        </div>
-        
-        <div class="grid md:grid-cols-3 gap-6">
-            <div class="bg-white p-8 rounded-3xl border">
-                <div class="flex gap-x-1 text-[#C9A227] mb-4">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <p class="italic text-slate-700">"The checklists and pre-inspection tools would have saved us thousands in delays and rework. This is exactly what new restaurants in New York need."</p>
-                <div class="mt-6 text-sm">
-                    <div class="font-semibold">— Early Pilot Operator</div>
-                    <div class="text-slate-500 text-xs">Hudson Valley, NY</div>
-                </div>
-            </div>
-            
-            <div class="bg-white p-8 rounded-3xl border">
-                <div class="flex gap-x-1 text-[#C9A227] mb-4">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                </div>
-                <p class="italic text-slate-700">"As someone who works with dozens of new food businesses, this platform fills a massive gap. The permitting timeline alone is worth it."</p>
-                <div class="mt-6 text-sm">
-                    <div class="font-semibold">— Small Business Development Advisor</div>
-                    <div class="text-slate-500 text-xs">Central New York</div>
-                </div>
-            </div>
-            
-            <div class="bg-white p-8 rounded-3xl border">
-                <div class="flex gap-x-1 text-[#C9A227] mb-4">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <p class="italic text-slate-700">"Jeff’s 40 years of real-world experience shows in every detail. This isn’t theory — it’s the practical system I wish I had when I opened my first restaurant."</p>
-                <div class="mt-6 text-sm">
-                    <div class="font-semibold">— Restaurant Owner &amp; Consultant</div>
-                    <div class="text-slate-500 text-xs">Capital Region, NY</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FINAL CTA -->
-    <section class="max-w-screen-2xl mx-auto px-8 pb-16">
-        <div class="bg-gradient-to-br from-[#0A2540] to-slate-900 rounded-[3rem] px-10 py-14 text-center text-white">
-            <h2 class="text-4xl md:text-5xl font-bold tracking-tighter">Ready to give your restaurant<br>the best possible start?</h2>
-            <p class="mt-4 max-w-md mx-auto text-white/75">Join the growing number of New York operators using the Golden Rule framework to launch with confidence.</p>
-            
-            <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-                <button onclick="startAssessment()" 
-                        class="gold-btn px-10 py-4 text-lg font-semibold rounded-2xl inline-flex items-center justify-center gap-x-3 shadow-xl">
-                    <i class="fas fa-clipboard-list"></i>
-                    <span>Take the Free Launch Assessment</span>
-                </button>
-                <button onclick="showDemoModal()" 
-                        class="px-10 py-4 text-lg font-semibold border border-white/40 hover:bg-white/10 rounded-2xl transition-colors">
-                    Talk to Jeff Golden
-                </button>
-            </div>
-            <p class="text-xs text-white/50 mt-6 tracking-wider">NO CREDIT CARD REQUIRED • INSTANT RESULTS</p>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-white border-t">
-        <div class="max-w-screen-2xl mx-auto px-8 py-12 text-sm">
-            <div class="flex flex-col md:flex-row justify-between gap-y-8">
-                <div>
-                    <div class="flex items-center gap-x-3 mb-3">
-                        <img src="logo.jpg" alt="Golden Rule Consulting" class="h-9 w-auto">
-                        <div>
-                            <span class="font-semibold tracking-tight">Golden Rule Consulting</span>
-                        </div>
-                    </div>
-                    <p class="text-slate-500 max-w-xs">Helping New York restaurants launch successfully and stay open for generations.</p>
-                    <div class="mt-4 text-xs text-slate-400">© 2026 Golden Rule Consulting by Jeff Golden. All rights reserved.</div>
-                </div>
-                
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-8 text-sm">
-                    <div>
-                        <div class="font-semibold mb-3 text-slate-800">Platform</div>
-                        <div class="space-y-2 text-slate-600">
-                            <div>Launch Assessment</div>
-                            <div>Compliance Tools</div>
-                            <div>Permitting Tracker</div>
-                            <div>Pre-Inspection Simulator</div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="font-semibold mb-3 text-slate-800">Company</div>
-                        <div class="space-y-2 text-slate-600">
-                            <div>About Jeff Golden</div>
-                            <div>Our Approach</div>
-                            <div>Case Studies</div>
-                            <div>Contact</div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="font-semibold mb-3 text-slate-800">For Partners</div>
-                        <div class="space-y-2 text-slate-600">
-                            <div>Empire State Development</div>
-                            <div>Health Departments</div>
-                            <div>Economic Development Orgs</div>
-                            <div>Pilot Program Inquiry</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- DEMO MODAL -->
-    <div id="demo-modal" onclick="if (event.target.id === 'demo-modal') hideDemoModal()" class="hidden fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-6">
-        <div onclick="event.stopImmediatePropagation()" class="bg-white rounded-3xl max-w-lg w-full p-8 shadow-2xl">
-            <div class="flex justify-between items-start">
-                <div>
-                    <h3 class="font-bold text-2xl tracking-tight">Request a Personalized Demo</h3>
-                    <p class="text-slate-600 mt-1">See exactly how Golden Rule can accelerate your restaurant launch or support your constituents.</p>
-                </div>
-                <button onclick="hideDemoModal()" class="text-2xl text-slate-400 hover:text-slate-600">&times;</button>
-            </div>
-            
-            <form id="demo-form" onsubmit="submitDemoForm(event)" class="mt-7 space-y-5">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                        <label class="text-xs font-medium text-slate-600 block mb-1.5">Full Name</label>
-                        <input type="text" required class="w-full border border-slate-200 focus:border-[#C9A227] rounded-2xl px-4 py-3 text-sm outline-none">
-                    </div>
-                    <div>
-                        <label class="text-xs font-medium text-slate-600 block mb-1.5">Organization / Restaurant</label>
-                        <input type="text" required class="w-full border border-slate-200 focus:border-[#C9A227] rounded-2xl px-4 py-3 text-sm outline-none">
-                    </div>
-                </div>
-                
-                <div>
-                    <label class="text-xs font-medium text-slate-600 block mb-1.5">Email Address</label>
-                    <input type="email" required class="w-full border border-slate-200 focus:border-[#C9A227] rounded-2xl px-4 py-3 text-sm outline-none">
-                </div>
-                
-                <div>
-                    <label class="text-xs font-medium text-slate-600 block mb-1.5">What best describes you?</label>
-                    <select required class="w-full border border-slate-200 focus:border-[#C9A227] rounded-2xl px-4 py-3 text-sm outline-none bg-white">
-                        <option value="">Select one...</option>
-                        <option>Aspiring or new restaurant owner/operator</option>
-                        <option>Existing restaurant expanding or re-opening</option>
-                        <option>Empire State Development or economic development professional</option>
-                        <option>County or local health department staff</option>
-                        <option>Small business advisor / SBDC / consultant</option>
-                        <option>Other government or nonprofit partner</option>
-                    </select>
-                </div>
-                
-                <div>
-                    <label class="text-xs font-medium text-slate-600 block mb-1.5">Message / Specific Interest (optional)</label>
-                    <textarea rows="3" class="w-full border border-slate-200 focus:border-[#C9A227] rounded-3xl px-4 py-3 text-sm outline-none resize-y"></textarea>
-                </div>
-                
-                <button type="submit" 
-                        class="w-full gold-btn py-3.5 rounded-2xl font-semibold text-base mt-2 flex items-center justify-center gap-x-2">
-                    Submit Request
-                </button>
-                
-                <p class="text-center text-[10px] text-slate-400">We typically respond within 1 business day. Your information is confidential.</p>
-            </form>
-        </div>
+  </header>
+  <div id="root"></div>
+  <footer>
+    <div class="wrap">
+      <p><b class="gold">Golden Ticket</b> · Golden Rule Consulting · Chef Jeff Golden · Utica, New York</p>
+      <p>244 Genesee Street · Golden's Food · 16 seats as the lab</p>
+      <p><a href="mailto:jagtech00@gmail.com">jagtech00@gmail.com</a></p>
+      <p style="opacity:.5;font-size:12px">© 2026 Golden Rule Consulting</p>
     </div>
-
-    <script>
-        // Tailwind script
-        function initializeTailwind() {
-            document.documentElement.style.setProperty('--accent-gold', '#C9A227');
-        }
-        
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
-        
-        // Demo modal
-        let demoModal = null;
-        
-        function showDemoModal() {
-            demoModal = document.getElementById('demo-modal');
-            demoModal.classList.remove('hidden');
-            demoModal.classList.add('flex');
-        }
-        
-        function hideDemoModal() {
-            if (demoModal) {
-                demoModal.classList.remove('flex');
-                demoModal.classList.add('hidden');
-            }
-        }
-        
-        function submitDemoForm(e) {
-            e.preventDefault();
-            const form = e.target;
-            const btn = form.querySelector('button[type="submit"]');
-            const originalText = btn.innerHTML;
-            
-            btn.innerHTML = `<span class="flex items-center justify-center gap-x-2"><i class="fas fa-spinner fa-spin"></i> Submitting...</span>`;
-            btn.disabled = true;
-            
-            setTimeout(() => {
-                btn.innerHTML = `<span class="flex items-center justify-center gap-x-2"><i class="fas fa-check"></i> Request Received!</span>`;
-                
-                setTimeout(() => {
-                    hideDemoModal();
-                    // Show thank you toast
-                    showToast("Thank you! We'll be in touch within 24 hours to schedule your personalized demo.");
-                    form.reset();
-                    btn.innerHTML = originalText;
-                    btn.disabled = false;
-                }, 1400);
-            }, 1600);
-        }
-        
-        function showToast(message) {
-            const toast = document.createElement('div');
-            toast.className = `fixed bottom-6 left-1/2 -translate-x-1/2 bg-[#0A2540] text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-x-3 text-sm z-[200]`;
-            toast.innerHTML = `
-                <i class="fas fa-check-circle text-[#C9A227]"></i>
-                <span>${message}</span>
-            `;
-            document.body.appendChild(toast);
-            
-            setTimeout(() => {
-                toast.style.transition = 'all 0.3s ease';
-                toast.style.opacity = '0';
-                setTimeout(() => toast.parentNode.removeChild(toast), 300);
-            }, 4200);
-        }
-        
-        // Free Assessment flow (simulated)
-        function startAssessment() {
-            const modal = document.createElement('div');
-            modal.className = `fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-6`;
-            modal.innerHTML = `
-                <div class="bg-white rounded-3xl max-w-2xl w-full p-8 md:p-10 shadow-2xl max-h-[92vh] overflow-auto">
-                    <div class="flex justify-between mb-6">
-                        <div>
-                            <span class="platform-pill text-xs px-3.5 py-1 rounded-full">FREE TOOL</span>
-                            <h3 class="font-bold text-3xl tracking-tight mt-2">Restaurant Launch Readiness Assessment</h3>
-                            <p class="text-slate-600 mt-1">Answer 8 quick questions to receive your personalized score and prioritized action plan.</p>
-                        </div>
-                        <button onclick="closeAssessmentModal(this)" class="text-3xl text-slate-300 hover:text-slate-500 leading-none">&times;</button>
-                    </div>
-                    
-                    <div class="space-y-7 text-sm">
-                        <div>
-                            <label class="font-medium block mb-2">1. What stage is your restaurant project in?</label>
-                            <select class="w-full border rounded-2xl px-4 py-[13px] text-sm">
-                                <option>Just an idea / concept development</option>
-                                <option>Site selected or lease signed</option>
-                                <option>Build-out or renovation in progress</option>
-                                <option>Ready to apply for permits / health dept</option>
-                                <option>Already open but struggling with compliance</option>
-                            </select>
-                        </div>
-                        
-                        <div>
-                            <label class="font-medium block mb-2">2. Which county or region in New York are you opening in?</label>
-                            <input type="text" placeholder="e.g. Oneida, Albany, Westchester, NYC..." class="w-full border rounded-2xl px-4 py-[13px] text-sm">
-                        </div>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                            <div>
-                                <label class="font-medium block mb-2">3. Do you have experience operating a restaurant?</label>
-                                <select class="w-full border rounded-2xl px-4 py-[13px] text-sm">
-                                    <option>No prior restaurant ownership experience</option>
-                                    <option>Some industry experience (chef/manager)</option>
-                                    <option>Owned or operated 1+ restaurants before</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="font-medium block mb-2">4. Have you started the permitting process?</label>
-                                <select class="w-full border rounded-2xl px-4 py-[13px] text-sm">
-                                    <option>Not yet started</option>
-                                    <option>Submitted some applications</option>
-                                    <option>Have Certificate of Occupancy or building permits</option>
-                                    <option>Health permit application in progress</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <label class="font-medium block mb-2">5. What is your biggest concern right now?</label>
-                            <select class="w-full border rounded-2xl px-4 py-[13px] text-sm">
-                                <option>Understanding all the permits and timelines</option>
-                                <option>Passing the health department inspection</option>
-                                <option>Staff training and food safety systems</option>
-                                <option>Financing / cash flow during launch</option>
-                                <option>Everything — I feel overwhelmed</option>
-                            </select>
-                        </div>
-                        
-                        <div class="pt-3">
-                            <button onclick="completeAssessment(this)" 
-                                    class="w-full gold-btn py-4 rounded-2xl font-semibold text-base flex items-center justify-center gap-x-2">
-                                <span>Generate My Personalized Report</span>
-                            </button>
-                            <p class="text-center text-[10px] text-slate-400 mt-3">Takes less than 90 seconds • Instant results • No email required to start</p>
-                        </div>
-                    </div>
-                </div>
-            `;
-            document.body.appendChild(modal);
-            window.currentAssessmentModal = modal;
-        }
-        
-        function closeAssessmentModal(element) {
-            const modal = element.closest('.fixed');
-            if (modal) modal.remove();
-        }
-        
-        function completeAssessment(button) {
-            const modalContent = button.closest('.bg-white');
-            modalContent.innerHTML = `
-                <div class="text-center py-8 px-6">
-                    <div class="mx-auto w-20 h-20 rounded-full bg-emerald-100 flex items-center justify-center mb-6">
-                        <i class="fas fa-check text-emerald-600 fa-3x"></i>
-                    </div>
-                    <h3 class="font-bold text-3xl tracking-tight">Your Launch Readiness Score: <span class="text-emerald-600">68/100</span></h3>
-                    <p class="text-slate-600 mt-2 max-w-sm mx-auto">Good foundation, but several critical gaps in permitting timelines and inspection preparedness.</p>
-                    
-                    <div class="mt-8 bg-slate-50 border rounded-2xl p-6 text-left max-w-md mx-auto">
-                        <div class="font-semibold mb-3 flex items-center gap-x-2"><i class="fas fa-exclamation-triangle text-amber-500"></i> Top Priorities for You:</div>
-                        <ul class="space-y-2 text-sm text-slate-700">
-                            <li class="flex gap-x-2"><span class="font-mono text-xs mt-1 w-4">01</span> Map full permitting sequence for your county</li>
-                            <li class="flex gap-x-2"><span class="font-mono text-xs mt-1 w-4">02</span> Complete pre-inspection checklist (especially cold holding &amp; documentation)</li>
-                            <li class="flex gap-x-2"><span class="font-mono text-xs mt-1 w-4">03</span> Schedule certified food protection manager training</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-                        <button onclick="claimFullReport(this)" class="gold-btn px-8 py-3.5 rounded-2xl font-semibold flex-1 sm:flex-none">Unlock Full Customized Roadmap</button>
-                        <button onclick="closeAssessmentModal(this)" class="px-8 py-3.5 rounded-2xl font-semibold border border-slate-300 flex-1 sm:flex-none">Maybe Later</button>
-                    </div>
-                    <p class="text-xs text-center text-slate-400 mt-5">Full report includes your county-specific timeline, document checklist, and 30-day action plan.</p>
-                </div>
-            `;
-        }
-        
-        function claimFullReport(element) {
-            const container = element.closest('.text-center');
-            container.innerHTML = `
-                <div class="py-6">
-                    <i class="fas fa-envelope-open-text text-4xl text-[#C9A227] mb-4"></i>
-                    <h4 class="font-bold text-xl">Great choice.</h4>
-                    <p class="text-slate-600 mt-1">Enter your email to receive your full personalized Launch Roadmap + schedule a free 20-minute strategy call with Jeff Golden.</p>
-                    
-                    <form onsubmit="submitEmailForReport(event, this)" class="mt-6 max-w-sm mx-auto">
-                        <input type="email" placeholder="your@email.com" required 
-                               class="w-full border border-slate-300 focus:border-[#C9A227] px-5 py-3 rounded-2xl text-sm mb-3">
-                        <button type="submit" class="w-full navy-btn py-3 rounded-2xl font-semibold">Send My Full Report &amp; Book Call</button>
-                    </form>
-                    <p class="text-[10px] text-slate-400 mt-4">We respect your inbox. Unsubscribe anytime.</p>
-                </div>
-            `;
-        }
-        
-        function submitEmailForReport(e, form) {
-            e.preventDefault();
-            const btn = form.querySelector('button');
-            btn.innerHTML = 'Sending...';
-            btn.disabled = true;
-            
-            setTimeout(() => {
-                form.innerHTML = `
-                    <div class="text-center py-4">
-                        <i class="fas fa-check-circle text-emerald-500 text-4xl mb-3"></i>
-                        <div class="font-semibold">Thank you! Your full roadmap is on its way.</div>
-                        <p class="text-sm text-slate-600 mt-1">Check your email in the next few minutes. Jeff will personally follow up to schedule your strategy call.</p>
-                        
-                        <button onclick="closeAssessmentModal(this)" class="mt-6 text-sm underline text-slate-500">Close window</button>
-                    </div>
-                `;
-            }, 1350);
-        }
-        
-        // Keyboard escape for modals
-        document.addEventListener('keydown', function(e) {
-            if (e.key === "Escape") {
-                const modals = document.querySelectorAll('.fixed.inset-0');
-                if (modals.length > 0) {
-                    modals[modals.length - 1].remove();
-                } else {
-                    const demo = document.getElementById('demo-modal');
-                    if (demo && !demo.classList.contains('hidden')) hideDemoModal();
-                }
-            }
+  </footer>
+  <script>
+    const DATA = {"PHASES":[{"id":"entity","number":"01","title":"Form the business","window":"Weeks 1–3","intent":"Get legal, banked, insured, and tax-ready before you spend a dollar on tile."},{"id":"site","number":"02","title":"Lock the room","window":"Weeks 2–8","intent":"Lease, occupancy, fire, grease, and the bones of a kitchen that can pass."},{"id":"health","number":"03","title":"Health department","window":"Weeks 4–12","intent":"Plan review, certified manager, and a permit you can hang on the wall."},{"id":"alcohol","number":"04","title":"Liquor, if you serve","window":"3–8 months","intent":"SLA is slow. Start it the day the lease is real — or skip it cleanly."},{"id":"kitchen","number":"05","title":"Kitchen systems","window":"Weeks 6–12","intent":"Equipment, sinks, cold holding, and the records inspectors actually ask for."},{"id":"menu","number":"06","title":"Menu and money","window":"Weeks 6–10","intent":"Costed recipes, allergens, vendors, and a POS that does not fight you."},{"id":"people","number":"07","title":"People","window":"Weeks 8–12","intent":"Hire, train, and schedule like the first Saturday will be busy — because it will."},{"id":"preopen","number":"08","title":"Pre-open week","window":"7 days before service","intent":"Self-inspect, dummy service, posters on the wall, first delivery in."},{"id":"thirty","number":"09","title":"First 30 days","window":"Days 1–30","intent":"The habits that keep the doors open after the ribbon is cut."}],"TASKS":[{"id":"entity-structure","phase":"entity","title":"Choose the structure (LLC is the usual call)","summary":"Most NY independents open as an LLC. Keep personal assets off the chopping block.","why":"A restaurant is a liability machine. One slip-and-fall or unpaid vendor should not take the house.","how":["Talk to a NY accountant or small-business attorney for 45 minutes — cheaper than guessing.","LLC is the default for a 16–60 seat independent. S-corp election can come later if payroll warrants it.","Do not open in your personal name. Inspectors, landlords, and insurers all want an entity."],"typicalDays":"1–2 days to decide","required":true},{"id":"entity-llc","phase":"entity","title":"File the NY LLC with the Department of State","summary":"Articles of Organization through DOS. Get the filing receipt and keep it in the binder.","why":"You cannot get an EIN, bank account, or most permits without proof the company exists.","how":["File Articles of Organization with NYS Department of State (online is fastest).","Pay the filing fee. Save the stamped filing receipt as a PDF and a paper copy.","Publish if your county still requires LLC publication — many upstate counties do. Budget for two newspapers."],"typicalDays":"1–10 days (online is faster)","required":true,"nyLink":{"label":"NYS Department of State — Business Filing","href":"https://dos.ny.gov/limited-liability-companies"}},{"id":"entity-ein","phase":"entity","title":"Get an EIN from the IRS","summary":"Free, online, same day. You need it for the bank, payroll, and sales tax.","why":"Every vendor, the state, and Square will ask for it. Do this the afternoon the LLC files.","how":["Use the IRS EIN assistant as the responsible party of the LLC.","Print the CP 575 confirmation and put it behind the DOS receipt.","Never pay a third-party site for an EIN. It is free from IRS.gov."],"typicalDays":"Same day","required":true,"nyLink":{"label":"IRS EIN assistant","href":"https://www.irs.gov/businesses/small-businesses-self-employed/apply-for-an-employer-identification-number-ein-online"}},{"id":"entity-dba","phase":"entity","title":"File a DBA if the sign will not match the LLC name","summary":"Golden's Food LLC can hang a different name. County clerk files the assumed name.","why":"Banks, Square, and the health permit need the legal name and the name on the awning to connect.","how":["File the Certificate of Assumed Name with the county clerk where you operate.","Match the assumed name exactly to the sign, menus, and social accounts."],"typicalDays":"1–5 days","required":false},{"id":"entity-bank","phase":"entity","title":"Open a dedicated business checking account","summary":"EIN + LLC docs + your ID. Never mix household money with the drawer.","why":"Commingling is how good operators lose the LLC shield and cannot see if the place is making money.","how":["Bring DOS filing, EIN letter, ID, and opening deposit.","Order a debit card and a book of checks. Set up online bill pay.","Decide now: owner draw is a transfer, not a swipe at the grocery store."],"typicalDays":"1 day in branch","required":true},{"id":"entity-sales-tax","phase":"entity","title":"Certificate of Authority — NYS sales tax","summary":"Register with Tax and Finance before you sell a single coffee.","why":"Food service collects sales tax on a lot of tickets. Operating without a Certificate of Authority is a fast, ugly problem.","how":["Register on NY Business Express / Tax and Finance.","Print the Certificate of Authority and post it where staff can find it.","Know which of your items are taxable (most prepared food is). Ask your accountant once, write it down."],"typicalDays":"A few days to 2 weeks","required":true,"nyLink":{"label":"NY Business Express — sales tax","href":"https://www.businessexpress.ny.gov/"}},{"id":"entity-insurance","phase":"entity","title":"General liability, property, and workers' comp","summary":"Landlord and health department will both ask. Get quotes while the lease is in redline.","why":"One burn, one slip, one grease fire. Uninsured restaurants close. Insured ones stay in the fight.","how":["General liability is non-negotiable. Ask for restaurant-class coverage, not a generic shop policy.","If you have any employee — even one — you need workers' compensation and NYS disability.","If you lease, the landlord will require to-be-named additional insured. Get the certificate before keys.","Contents / equipment coverage matters the day the walk-in is delivered."],"typicalDays":"3–10 days for certificates","required":true},{"id":"entity-labor","phase":"entity","title":"Unemployment insurance and disability registration","summary":"NYS Department of Labor and Workers' Comp Board. Required the moment you have payroll.","why":"You will get a letter. Better that it is expected than a surprise with penalties.","how":["Register as an employer with NYS Department of Labor when you hire.","Disability (DB-120.1) and paid family leave sit with a carrier — often the same as workers' comp.","Post the required labor posters on day one of staff in the building."],"typicalDays":"1 week","required":true,"nyLink":{"label":"NYS Department of Labor — employers","href":"https://dol.ny.gov/employers"}},{"id":"entity-books","phase":"entity","title":"Set the books (and a simple weekly close)","summary":"QuickBooks or a clean spreadsheet plus Square. Know food cost every Monday.","why":"Places do not die from bad pancakes. They die from not knowing the number until the rent check bounces.","how":["Chart of accounts: food, bev, labor, occupancy, paper, repairs, owner draw.","Connect Square (or your POS) so tickets land in the books daily.","Friday close: cash counted, tips handled, invoices entered. No 'I'll catch up Sunday.'"],"typicalDays":"1–2 days to set up","required":true},{"id":"site-criteria","phase":"site","title":"Write the site criteria before you fall in love with a room","summary":"Seats, hood, grease, parking, water, neighbors, and rent as a percent of projected sales.","why":"A cheap rent with no hood is the most expensive room you will ever take.","how":["Cap occupancy rent at a number you can survive in a slow February. Independents often target 8–12% of sales.","Confirm: existing Type I hood, grease interceptor, restrooms that can pass, and a sink package that is not a teardown.","Visit at the hour you will be busiest. Count parking. Listen to the neighbors."],"typicalDays":"Ongoing until signed","required":true},{"id":"site-lease","phase":"site","title":"Negotiate a restaurant lease, not a shop lease","summary":"HVAC, grease, exclusive use, assignment, hours, and who pays when the hood dies.","why":"Generic commercial leases bury operators. Get restaurant language or walk.","how":["Spell out who owns and maintains the hood, Ansul, HVAC, and grease trap.","Get exclusive use for your concept on the plaza if you can.","Build a permitting contingency: if health or occupancy cannot be obtained in X days, you can exit.","Have a lawyer who has done food service leases read it. Not your cousin."],"typicalDays":"2–6 weeks of redlines","required":true},{"id":"site-zoning","phase":"site","title":"Confirm zoning and Certificate of Occupancy","summary":"Food service in this occupancy, this load, this use. Get it in writing from the city or town.","why":"A beautiful build-out in the wrong zone is a storage unit with a marble counter.","how":["Ask the building department: current C of O, allowed use, seating load, restroom count.","If the last use was not food service, budget time for a change of use and possibly a variance.","Keep the written answer in the binder. Verbal 'should be fine' is not a permit."],"typicalDays":"1–4 weeks","required":true},{"id":"site-building","phase":"site","title":"Building permit and fire marshal","summary":"Any hood work, walls, plumbing, or electrical needs a permit. Fire will look at suppression and exits.","why":"Unpermitted work fails the health pre-op and the insurance claim after a fire.","how":["Submit plans if you are moving walls, adding a hood, or changing occupancy load.","Ansul / hood suppression must be currently tagged. Schedule the fire inspection before health walks.","Exit signs, emergency lights, and occupant load posted. Test them."],"typicalDays":"2–8 weeks depending on the town","required":true},{"id":"site-plumbing","phase":"site","title":"Grease interceptor, mop sink, and indirect drains","summary":"Health and plumbing code both care. A missing interceptor is a stop-work.","why":"Inspectors look under the dish table. So do city sewer departments after the first clog.","how":["Confirm grease interceptor size and pumping contract.","Mop sink with chemical storage above the splash line, not in the food room.","Prep sinks and ice machines need air gaps / indirect waste. Photograph them."],"typicalDays":"Tied to build-out","required":true},{"id":"site-waste","phase":"site","title":"Dumpster, recycling, and pest contract","summary":"Signed pest control is not optional. Dumpster lids that close are not optional.","why":"The first failed inspection in a new room is often the alley, not the line.","how":["Contract a licensed pest company for monthly service and a bait map.","Dumpster on a hard pad, lids closed, away from the back door if you can.","Keep the service log in the same binder as the temp sheets."],"typicalDays":"1 week to contract","required":true},{"id":"site-ada","phase":"site","title":"Access: restroom, door, and path of travel","summary":"You will be asked. Fix it during build-out, not after a complaint.","why":"A 16-seat room still has to let people in. This is the law and it is the right thing.","how":["Check door widths, restroom grab bars, and a route from the entrance that is not a storage gauntlet.","If the building is old, document what you can reasonably do and talk to the building department."],"typicalDays":"During build-out","required":true},{"id":"site-sign","phase":"site","title":"Sign permit and awning","summary":"Cities care about the face of the block. File it; do not surprise them on opening day.","why":"A $4,000 sign sitting in a crate because of a missing permit is a stupid delay.","how":["Submit renderings with the landlord's written approval.","Confirm lighting rules if you want a night glow."],"typicalDays":"2–6 weeks","required":false},{"id":"health-call","phase":"health","title":"Call the county health department on day one of the lease","summary":"Oneida County and every other NY county have their own packet. Get it before you buy equipment.","why":"Plan review exists so you do not install a three-bay in the wrong place. Calling late is how openings slip 60 days.","how":["Ask for the food service establishment packet, plan-review checklist, and fee schedule.","Get the name of the inspector or plan reviewer. Write it in the binder.","Tell them your concept, seating, and whether you are a conversion or a raw build."],"typicalDays":"One phone call, then their calendar","required":true},{"id":"health-plans","phase":"health","title":"Submit plan review: layout, finishes, menu, equipment","summary":"Floor plan with sinks, finish schedule, equipment spec sheets, and a menu.","why":"They are looking for hand sinks in the right spots, washable surfaces, and a flow that does not cross dirty with ready-to-eat.","how":["Draw the room: cook line, prep, dish, dry storage, chemical, restrooms, hand sinks.","Finish schedule: floors, walls, ceilings — smooth, cleanable, coved base where they want it.","Attach spec sheets for every piece of refrigeration, the dish machine, and the hood.","Include a menu so they can see raw animal foods, cooling, and allergen risk."],"typicalDays":"2–6 weeks in review","required":true},{"id":"health-cfpm","phase":"health","title":"Certified Food Protection Manager","summary":"ServSafe or another ANSI-accredited course. Someone on the permit must hold it.","why":"NY expects a certified person responsible for the operation. Inspectors will ask to see the card.","how":["Take an accredited CFPM course. ServSafe Manager is the common path.","Post a copy in the office. Original in the binder.","If you are a solo operator, that person is you. Do not open hoping to 'get to it.'"],"typicalDays":"1–2 days of class + exam","required":true},{"id":"health-allergen","phase":"health","title":"Allergen awareness and the matrix on the line","summary":"Staff must be able to answer 'does this have milk?' without guessing.","why":"A wrong answer puts someone in an ambulance. Inspectors and guests both test you.","how":["Build an allergen matrix for every menu item: milk, egg, fish, shellfish, tree nuts, peanut, wheat, soy, sesame.","Train every person who takes an order. Quiz them before opening.","Mark daily specials the same day you plate them — morels, nuts, and dairy sneak in."],"typicalDays":"2–3 days to build, then ongoing","required":true},{"id":"health-policy","phase":"health","title":"Employee health policy — in writing, signed","summary":"Vomit, diarrhea, jaundice, sore throat with fever: stay home. No exceptions because you are short.","why":"One sick cook can close you. The policy is what the inspector wants to see, and it is how you sleep.","how":["Write a one-page policy. Every hire signs it on day one.","Have a coverage plan so 'I have to come in' is not the culture.","Keep the signed copies with the training log."],"typicalDays":"Half a day","required":true},{"id":"health-apply","phase":"health","title":"File the food service permit application and fees","summary":"Application, payment, CFPM proof, and any water/sewer letters they want.","why":"No permit, no open. Do not advertise a date until the application is in.","how":["Fill every blank. Incomplete packets sit at the bottom of the pile.","If you are on a well or septic (rural CNY), budget extra time for water tests.","Keep the receipt. Follow up in writing if you have not heard in the stated window."],"typicalDays":"County-dependent; often 2–4 weeks after complete packet","required":true},{"id":"health-preop","phase":"health","title":"Pass the pre-operational inspection","summary":"The room must be finished, clean, equipped, and documented. This is the gate.","why":"This is the exam. Everything in this platform exists so this hour is boring.","how":["Run the self-inspection in this app the day before. Fix every red item.","Have the binder on the desk: CFPM, pest log, temp logs (even empty, formatted), sick policy, allergen matrix.","Walk the inspector the way you walk a guest — lights on, no excuses, no wet floors."],"typicalDays":"Scheduled; have a 48-hour buffer before your advertised open","required":true},{"id":"alcohol-decide","phase":"alcohol","title":"Decide beer/wine/liquor now — it changes the calendar","summary":"SLA is measured in months. A beer-and-wine on-premises is still not a weekend project.","why":"Operators blow opening dates waiting on a license they started too late.","how":["If you need alcohol to make the numbers work, start SLA the week the lease is real.","If you do not need it (breakfast/lunch diner), skip it and stay fast. You can add later.","Budget application, notice, possible 500-foot issues near schools and churches."],"typicalDays":"Decision in a day; license in months","required":false,"nyLink":{"label":"NYS Liquor Authority","href":"https://sla.ny.gov/"}},{"id":"alcohol-file","phase":"alcohol","title":"File the SLA application and municipal notice","summary":"Fingerprints, photos, diagrams, landlord forms, and the 30-day municipal notice.","why":"Incomplete SLA files sit. Complete files still take time. Start clean.","how":["Use the current SLA packet. Do not copy a friend's 2019 version.","Serve municipal notice the way they tell you. Keep proof of mailing.","If a consultant does this, you still read every page before it goes."],"typicalDays":"2–4 weeks to assemble, then SLA's clock","required":false},{"id":"alcohol-train","phase":"alcohol","title":"Server training and ID policy","summary":"ATAP or equivalent. Written door policy. No 'they looked 30.'","why":"One sale to a minor can cost the license. The license is the business if you are a bar.","how":["Train every server and bartender before the first pour.","Post the policy. Keep a refusal log."],"typicalDays":"1 day of training","required":false},{"id":"kitchen-layout","phase":"kitchen","title":"Lock the line layout: cook, prep, dish, storage","summary":"Dirty to clean flow. Raw away from ready-to-eat. Hand sink where hands actually are.","why":"A pretty line that crosses raw chicken over the salad station will fail and will make people sick.","how":["Stand in the room and mime a ticket. If you walk through dish to get to the walk-in, redraw it.","Hand sink at cook line and at prep — stocked, not a planter.","Chemicals live in their own closet, never over food."],"typicalDays":"During plan review","required":true},{"id":"kitchen-cold","phase":"kitchen","title":"Cold holding that actually holds 41°F","summary":"Walk-in, reach-ins, prep rails. Thermometers inside, calibrated, logged.","why":"If the rail sits at 48, you do not have a prep table. You have a liability.","how":["Put a hanging thermometer in every box. Check them twice a day from day one of power-on.","Do not overload prep rails. The top inch is where you lose temperature.","Have a backup plan for a dead walk-in: ice, hotel, or close. Write it down."],"typicalDays":"Install + 48 hours of monitoring before food goes in","required":true},{"id":"kitchen-hot","phase":"kitchen","title":"Hot holding, cooking temps, and a working stem thermometer","summary":"135°F hot hold. Cook temps by protein. Calibrate weekly.","why":"Guessing doneness is how you get a visit you will not enjoy.","how":["Buy two metal-stem thermometers. Ice-point calibrate every Monday.","Post cook temps at the grill: poultry 165, ground 155, fish/pork/whole muscle 145 (and know your code).","Steam table is not a reheating method. Reheat to 165, then hold."],"typicalDays":"Equipment lead time + training","required":true},{"id":"kitchen-warewash","phase":"kitchen","title":"Dish machine or three-compartment sink that sanitizes","summary":"Wash, rinse, sanitize. Test strips on a hook, not in a junk drawer.","why":"Inspectors test the sanitizer. So should you, every day.","how":["If a machine: heat or chemical — know which, and have the right strips.","If three-bay: labeled, drainboards, and a clock so sanitizer contact time is real.","Air dry. Towels are not a sanitizer."],"typicalDays":"Install + first chemical delivery","required":true},{"id":"kitchen-storage","phase":"kitchen","title":"Storage: 6 inches off the floor, covered, FIFO, chemicals out","summary":"Shelving, labels, and the refrigerator order that keeps raw on the bottom.","why":"The walk-in is a photograph waiting to happen. Make it a good one.","how":["Shelving 6 inches off the floor. No cardboard fortress.","Ready-to-eat on top, then fish/whole meat, then ground, poultry at the bottom. Always.","Date mark anything opened or prepped. 7-day clock for 41°F holding."],"typicalDays":"One organized day","required":true},{"id":"kitchen-sds","phase":"kitchen","title":"SDS binder, first aid, and burn kit","summary":"Every chemical on the property has a sheet. Staff know where it lives.","why":"OSHA and the inspector. Also the kid who mixes something they should not.","how":["Print SDS for sanitizer, degreaser, delimer, and anything else on the rack.","First aid and burn gel not locked in the office.","Eyewash if you have the chemicals that require it."],"typicalDays":"Half a day","required":true},{"id":"menu-cards","phase":"menu","title":"Recipe cards with yield and plate cost","summary":"Every item has a card. Cost it at today's invoice, not last year's memory.","why":"If you do not know the plate cost, you are guessing the rent.","how":["One card per item: ingredients, ounces, yield, plate cost, sell price, allergen flags.","Target food cost you can live with — many independents need 28–32% on the mix, not on the hero dish.","Re-cost when the invoice jumps. Eggs and butter will jump."],"typicalDays":"3–7 days for a tight menu","required":true},{"id":"menu-specials","phase":"menu","title":"Daily specials system (the chalkboard, not a panic)","summary":"A written method for specials: cost, allergen, 86 time, and who tells the floor.","why":"Specials are how a small room stays interesting. Uncosted specials are how you work for free.","how":["Template: name, ingredients, cost, price, allergens, portion, 86 count.","If you run foraged morels or garden produce, write the source and the cook method that day.","The board matches the ticket. No oral-only specials on a Saturday."],"typicalDays":"Build the template in a day; use it forever","required":true},{"id":"menu-vendors","phase":"menu","title":"Open vendor accounts and a receiving standard","summary":"Primary broadliner, produce, bread, coffee, chemical. Reject warm protein. Always.","why":"The back door is where food safety and money both leak.","how":["Open accounts before you need product. First-order minimums will surprise you.","Receiving: check temps on protein, dates, and the invoice against the order.","Keep a local list for the things that make the room yours — bakers, farms, foragers you trust."],"typicalDays":"1–2 weeks for credit applications","required":true},{"id":"menu-pos","phase":"menu","title":"POS live: Square (or your system) with the real menu","summary":"Categories, modifiers, tax, discounts, cash drawer. Test a dummy day.","why":"Opening on a phone calculator is how tickets get lost and tax gets missed.","how":["Build the menu in the POS exactly as it will print.","Set tax the way NY wants it for your mix.","Run a fake lunch: 20 tickets, a void, a comp, a cash drop. Fix what breaks."],"typicalDays":"2–4 days","required":true},{"id":"menu-par","phase":"menu","title":"Opening par levels and a Thursday order rhythm","summary":"Do not fill the walk-in like a warehouse. Small rooms die of over-ordering.","why":"Cash in a case of product you will throw away is cash you needed for payroll.","how":["Par by item for the first two weeks based on a conservative cover count.","Order days on the calendar. Not 'when we remember.'","Prep lists from the par, not from vibes."],"typicalDays":"1 day to write, then weekly edits","required":true},{"id":"people-plan","phase":"people","title":"Staffing plan that matches the actual room","summary":"A 16-seat diner can be a solo plus one. A 60-seat night needs a real line. Write the number.","why":"Labor is the second thing that closes places. The first is not knowing labor.","how":["Schedule to covers, not to hope. Opening week is heavier. Week three should tighten.","If you are the cook, the dish, and the register, write what happens when you are sick. Now.","Budget training hours. Untrained people are more expensive than a paid shadow shift."],"typicalDays":"2 days","required":true},{"id":"people-hire","phase":"people","title":"Hire, I-9, and a one-page handbook","summary":"Legal hire packet. Then four pages max: clock, food, phones, respect, call-out.","why":"Culture is what you tolerate on day three, not what you laminated in March.","how":["I-9, W-4, state tax, direct deposit. Do it before they touch food.","Handbook: health policy, allergen, dress, no-phone on the line, how we talk to guests.","Paid trial shift if you can. Watch how they wash their hands when they think you are not."],"typicalDays":"2–4 weeks of hiring","required":true},{"id":"people-train","phase":"people","title":"Food handler training and a station walk-through","summary":"Every person: handwash, temps, allergens, 86s, and where the fire pull is.","why":"You cannot be on every ticket. Training is how your standards leave the office.","how":["A written opening checklist per station.","Quiz them on the allergen matrix and the sick policy.","Fire suppression pull, extinguisher, and evacuation — once, out loud, before guests."],"typicalDays":"3–5 training shifts","required":true},{"id":"preopen-clean","phase":"preopen","title":"Deep clean as if the inspector is in the parking lot","summary":"Ceilings, gaskets, behind the line, the alley, the restroom. Then do it again.","why":"Opening dirty sets the standard. Opening clean is easier to keep than to recover.","how":["Gaskets, hood filters, floor drains, can opener, ice machine chute.","Restroom: soap, towels, trash, a working lock, a clean fan.","Photograph the walk-in and the line the night before. If you would not post it, clean it."],"typicalDays":"2 days","required":true},{"id":"preopen-self","phase":"preopen","title":"Run the full pre-inspection in this app","summary":"Score it honestly. Fix red items before anyone official walks in.","why":"The inspector's list is not a surprise. Failing a self-audit and opening anyway is a choice.","how":["Use the Inspection tool. No 'we'll get it Monday.'","Criticals first: temps, hand sinks, sanitizer, storage order, pest.","Print or screenshot the score for the binder."],"typicalDays":"3 hours + fixes","required":true},{"id":"preopen-dummy","phase":"preopen","title":"Friends-and-family or a dummy service","summary":"Twenty real tickets. POS, plating, 86s, dish pit, and the pass. Then a debrief.","why":"Opening night is the wrong time to learn the printer is in the wrong place.","how":["Invite people who will tell you the truth.","Run it like service: tickets, times, temps, close-out.","Write three fixes. Do those fixes before the public."],"typicalDays":"One service + one recovery day","required":true},{"id":"preopen-posters","phase":"preopen","title":"Posters, choke chart, occupancy, and emergency numbers","summary":"Labor law, allergy notice, handwash signs, occupancy load, and who to call at 2 a.m.","why":"Missing posters are free points off. Missing a choke chart is worse.","how":["NYS labor posters from the official source — current year.","Handwash signs at every sink. Occupant load where the fire marshal wants it.","Emergency sheet: fire, police, plumber, hood company, health department, landlord."],"typicalDays":"Half a day","required":true},{"id":"preopen-delivery","phase":"preopen","title":"First deliveries in, dated, and put away correctly","summary":"Do not leave cases on the floor 'until later.' Later is how you fail.","why":"The first walk-in photograph should look like you meant it. Cases on the floor are how pests and inspectors both win.","how":["Receive, temp, date, shelve. Poultry on the bottom.","Break down cardboard out the back, not in the prep room.","Ice machine flushed and scooped with a handled scoop, stored outside the bin."],"typicalDays":"1–2 days before open","required":true},{"id":"thirty-open","phase":"thirty","title":"Opening and closing checklists — every shift, no exceptions","summary":"Temps, sanitizer, hand sinks, cash, 86s, and a clean line. Signed.","why":"Discipline is the product. Guests can taste when you skip it.","how":["Open: temps, sinks, sanitizer, lights, restroom, first prep list.","Close: cover, date, wipe, floors, trash, cash, notes for morning you.","If you are solo, the list is how you do not drop a ball when you are tired."],"typicalDays":"Every day","required":true},{"id":"thirty-cost","phase":"thirty","title":"Weekly food cost and a Thursday trim","summary":"Invoices vs. sales. 86 the loser. Push the winner. Order less of what died in the box.","why":"The first 30 days are where over-ordering becomes a habit or a lesson.","how":["Every Monday: last week's food purchases ÷ food sales.","Walk the walk-in with a marker. Date marks that are tired become staff meal or compost — not a hope.","Specials exist to use on-hand product with a profit, not to hide a mistake."],"typicalDays":"Monday, 45 minutes","required":true},{"id":"thirty-guest","phase":"thirty","title":"Talk to guests and fix one thing a day","summary":"A 16-seat room is a focus group. Write what they say. Change the room, not your story.","why":"You already know how to cook. The first month teaches you how this neighborhood eats.","how":["One notebook. One line per shift: what sold, what came back, what they asked for.","Do not rebuild the menu on day four. Do change the thing that failed twice.","Community is the marketing plan: names, regulars, the person at the end of the counter."],"typicalDays":"Every shift","required":true},{"id":"thirty-inspect-ready","phase":"thirty","title":"Stay inspection-ready on a random Tuesday","summary":"If they walked in during the rush, you should be bored, not scared.","why":"The second inspection is the real one. Opening-day shine fades. Systems should not.","how":["Temp logs filled. Not filled in after the fact.","Sanitizer at the right ppm. Strips not expired.","Walk-in still in the right order. If it is not, stop and fix it before the next ticket."],"typicalDays":"Every day","required":true}],"PLAYBOOKS":[{"slug":"storage-order","title":"Refrigerator storage order","kicker":"The walk-in photograph","minutes":"10 min to set · forever to keep","summary":"Ready-to-eat on top. Raw poultry on the bottom. Everything covered and dated. This is the first thing a good inspector photographs.","steps":[{"title":"Top shelves — ready-to-eat and produce that will not be cooked","body":"Washed greens, cooked food, dairy, leftovers that will be reheated, garnishes. Covered. Dated. Nothing raw above this line, ever."},{"title":"Next — whole muscle seafood and whole cuts of beef or pork","body":"These cook to a lower temperature than ground or poultry. Keep them below RTE and above ground meats."},{"title":"Lower — ground meats","body":"Ground beef, sausage, anything comminuted. Leak risk is higher. Tray them so a package cannot drip."},{"title":"Bottom — raw poultry","body":"Chicken and turkey live on the lowest shelf, in pans, never in leaking grocery bags. If it drips, it drips into a pan, not onto ready-to-eat food."},{"title":"Doors and drawers","body":"Prep rails follow the same logic. Do not park raw chicken next to the cut tomatoes because it 'fits.'"}],"inspectorLook":"They will open the walk-in before they say hello. If they see chicken over cut fruit, the visit is already going badly.","jeffNote":"I have watched operators argue with gravity. Gravity always wins. Put the bird on the bottom and go cook."},{"slug":"temps","title":"Temperature control","kicker":"The number that does not lie","minutes":"Twice a shift","summary":"41°F or below for cold. 135°F or above for hot hold. Reheat to 165°F. Calibrate the thermometer. Write the number down.","steps":[{"title":"Calibrate on Mondays — ice point","body":"Stir ice water. Stem in the slush, not the glass bottom. 32°F. If it is not, adjust or replace. A lying thermometer is worse than none."},{"title":"Cold holding","body":"Walk-in, reach-in, prep rail: 41°F or below. Log morning and afternoon. If a rail is 46°F, pull product, ice it, call for service — do not 'watch it.'"},{"title":"Cooking","body":"Poultry 165°F. Ground meats 155°F. Fish, pork, and whole muscle steaks 145°F (and know your local code). Check the thickest part."},{"title":"Hot holding and reheating","body":"Hold at 135°F or above. Leftovers go from cold to 165°F in two hours or less, then hold. The steam table is not a microwave."},{"title":"Cooling","body":"135°F to 70°F in 2 hours, then to 41°F in 4 more. Shallow pans, ice baths, uncovered while cooling, then cover. Chili in a stockpot overnight is how people get sick."}],"inspectorLook":"They will ask for the log and then temp the rail themselves. If the paper and the product disagree, they believe the product.","jeffNote":"I taught this for Compass Group in the '90s and I still walk to the box with a stem thermometer. Ink on a clipboard only matters if it matches the food."},{"slug":"handwashing","title":"Handwashing that actually happens","kicker":"The cheapest control you have","minutes":"20 seconds, all day","summary":"Dedicated sink, hot water, soap, towels, a trash within reach. Hands washed after raw, after restroom, after phone, after money, after trash.","steps":[{"title":"The sink is not a dump station","body":"No bus pans, no utensils, no food. If it is blocked, people will not use it. That is on you, not them."},{"title":"Stock it like you mean it","body":"Soap, paper towels, hot water that is actually hot, a trash can. Check it on the open list."},{"title":"When","body":"Before prep. After raw protein. After restroom. After eating. After handling money or the phone. After taking out trash. After touching the face or the floor."},{"title":"Gloves are not a personality","body":"Gloves over dirty hands are a gift wrap on a problem. Wash, then glove. Change gloves between raw and ready-to-eat."}],"inspectorLook":"They watch without announcing it. If a cook cracks eggs and then plates toast, the citation writes itself.","jeffNote":"In a 16-seat room you are five feet from the guest. They can see the sink. Act like it."},{"slug":"date-mark","title":"Date marking and leftovers","kicker":"Seven days, then it is gone","minutes":"As you prep","summary":"Opened TCS food and prepped food get a date. Hold at 41°F. Seven days including the day you made it. When in doubt, throw it out.","steps":[{"title":"What gets a date","body":"Anything you open, cook, or prep that is time/temperature control for safety: soups, meats, cut tomatoes, cut melons, cooked noodles, house sauces."},{"title":"How to mark","body":"Day made / day discard. Or a simple 'use by' that you all understand. One system, not three Sharpies with three brains."},{"title":"The clock","body":"Seven days at 41°F, counting today. Freeze stops the clock. Thawing restarts you at the remaining days, not a new seven."},{"title":"Staff meal is not a loophole","body":"If it is past date, it is not staff meal. It is trash. Feeding the crew something you would not serve a guest is how you train the wrong standard."}],"inspectorLook":"They will pull a pan at random and ask you to read the date. Hesitation is an answer.","jeffNote":"A small walk-in makes you honest. If you cannot see the date, you have too much product."},{"slug":"allergens","title":"Allergen control","kicker":"No guessing at the pass","minutes":"Build once · check every special","summary":"Milk, egg, fish, shellfish, tree nuts, peanut, wheat, soy, sesame. A matrix for the menu. A method for specials. A trained 'I don't know — let me check' instead of a shrug.","steps":[{"title":"Build the matrix","body":"Every menu item, every major allergen. Include shared fryer oil and shared cutting boards. Cross-contact is contact."},{"title":"Specials and foraged items","body":"Morels cooked in butter are a dairy dish. Say so on the board. Do not let a vegan special pick up fish from a pan."},{"title":"The sentence staff must use","body":"'Let me check the card.' Never 'should be fine.' The card lives at the pass."},{"title":"When you cannot control it","body":"If you cannot make it safely, say no. A lost ticket is cheaper than a hospital."}],"inspectorLook":"They may ask a server a direct allergen question. The right answer is the card, not confidence.","jeffNote":"I run vegan specials in a meat-and-eggs diner. That only works because the pan, the board, and the story match."},{"slug":"pest","title":"Pest prevention","kicker":"The alley tells on you","minutes":"Daily eyes · monthly service","summary":"Sealed doors, closed dumpsters, no cardboard cities, a licensed tech with a map. You cannot spray your way out of crumbs.","steps":[{"title":"Contract a licensed company","body":"Monthly service, bait map, and a log you can show. DIY bombs in a food room are how you close."},{"title":"Doors and docks","body":"Sweeps on the back door. Screen if it stays open. If you can see daylight under the door, so can a mouse."},{"title":"The dumpster","body":"Lids closed. Pad clean. Distance from the door if the lot allows. Spills rinsed, not left for raccoons."},{"title":"Inside","body":"No food overnight on the line. Floor drains clean. Dry storage off the floor. Break down boxes the day they arrive."}],"inspectorLook":"Droppings, gnawed bags, or a wide-open dumpster next to the screen door — that is a critical conversation.","jeffNote":"I have a swampy back lot and I still win this. Closed lids and a real pest contract. Not hope."},{"slug":"opening","title":"Daily opening","kicker":"Before the lights hit the board","minutes":"25–40 min","summary":"A written list so a tired brain does not skip the rail temp. Sign it. That signature is the standard.","steps":[{"title":"Walk the room","body":"Restroom stocked. Dining wiped. Lights. Music at a level you would eat under. Board matches the POS."},{"title":"Temps and sanitizer","body":"Every box, the rail, the dish machine or three-bay. Log it. Mix sanitizer, test strips, buckets labeled."},{"title":"Hands and line","body":"Hand sinks stocked. Cutting boards out. First prep list. Stem thermometer in the pocket, not the drawer."},{"title":"Money and 86s","body":"Drawer counted. 86 list from last night reviewed. Specials costed and flagged for allergens."}],"inspectorLook":"A completed open log from this morning is a quiet, beautiful thing to put in someone's hand.","jeffNote":"I start around 5 a.m. The list is how the room is ready when the first regular walks in, even if I slept poorly."},{"slug":"closing","title":"Daily closing","kicker":"Morning you is a guest","minutes":"30–50 min","summary":"Cover, date, wipe, floor, trash, cash, a note. Leave the room the way you wanted to find it at 5 a.m.","steps":[{"title":"Food","body":"Cover, date, correct shelf. Nothing cooling in a deep pot. Rails emptied if they will not hold overnight."},{"title":"Line and dish","body":"Wipe, degrease, floors, mats hung if that is your system. Dish pit empty. Machine drained per the maker."},{"title":"Trash and pests","body":"Trash out, dumpster lids closed, back door locked, lights as needed. No open product on the line."},{"title":"Cash and notes","body":"Count, drop, tip out. Three lines for morning: what 86'd, what broke, what to order."}],"inspectorLook":"They do surprise visits at close. A clean pit at 2 p.m. is good. A clean pit at night is the culture.","jeffNote":"Solo operators skip close when they are cooked. That is how the fruit flies start. Stay for the last ten minutes."},{"slug":"receiving","title":"Receiving and vendors","kicker":"The back door is a control point","minutes":"Every delivery","summary":"Check temperature, dates, and the invoice. Reject warm protein. Put it away before the next ticket, not after the rush 'dies down.'","steps":[{"title":"Be there","body":"If you cannot receive, do not let them dump and run. A signed invoice for product you did not check is your problem."},{"title":"Temp protein","body":"Cold items 41°F or below. Frozen still frozen. If a case of chicken is 48°F, refuse it. Call the house."},{"title":"Invoice vs. order","body":"Credits for shorts. No mystery items. Prices that jumped get a circle and a later call — not a shrug."},{"title":"Put away","body":"Right shelf, date if you open it, cardboard out. Do not build a cardboard fort in dry storage."}],"inspectorLook":"They may ask how you handle a bad delivery. 'We take whatever' is the wrong sentence.","jeffNote":"I have turned a driver around. He did not like it. The inspector never had to."},{"slug":"sick","title":"Sick worker policy","kicker":"Stay home","minutes":"Write once · enforce always","summary":"Vomit, diarrhea, jaundice, sore throat with fever, or an infected wound you cannot cover: you are not on the line. The policy is paper and culture.","steps":[{"title":"Write it in one page","body":"Symptoms, who to call, how many hours symptom-free before return (follow your health department — often 24 hours symptom-free without medicine for vomit/diarrhea)."},{"title":"Sign on hire","body":"Every person, including you. File it."},{"title":"Have a coverage plan","body":"If the only cook is you, the plan might be 'close the room.' That is legal. Cooking sick is not a flex."}],"inspectorLook":"They will ask for the policy. Then they will watch whether anyone on the line looks like they should be in bed.","jeffNote":"I have worked through things I should not have. That is a confession, not a method. Do not copy that part."},{"slug":"sanitizing","title":"Cleaning and sanitizing","kicker":"Wash, rinse, sanitize, air dry","minutes":"All day","summary":"Soap removes. Sanitizer kills what is left on a clean surface. Dirty + sanitizer is perfume on a problem.","steps":[{"title":"Three steps, in order","body":"Wash with detergent. Rinse. Sanitize at the right concentration. Air dry. Towel-drying cooked food contact surfaces is a habit to break."},{"title":"Test strips","body":"Chlorine or quat — match the chemical. Strips expire. Buckets get changed when they look like soup, not at close only."},{"title":"In-place cleaning","body":"Boards, knives, slicer, can opener, prep tables between raw and RTE. The slicer is a favorite hiding place."},{"title":"Night work","body":"Floors, drains, gaskets, behind the line. The things guests never see and inspectors always do."}],"inspectorLook":"They dip a strip in your bucket. Have a bucket.","jeffNote":"Chemical is not a personality either. Right ppm, right time, then leave it alone."},{"slug":"costing","title":"Menu costing","kicker":"Know the plate before you print the board","minutes":"Per item, then Mondays","summary":"Recipe, yield, invoice price, plate cost, sell price. Specials get the same math. A pretty dish that loses $2 is a hobby.","steps":[{"title":"Card every item","body":"Ounces in, yield out, garnish included. The parsley and the lemon are not free."},{"title":"Price from cost, then from the neighborhood","body":"If the math needs $18 and the block will pay $12, that is not a price problem yet — it is a dish problem."},{"title":"Watch the mix","body":"A 22% food-cost egg plate can carry a 38% morel special. The mix has to land where the rent gets paid."},{"title":"Re-cost when invoices jump","body":"Eggs, butter, coffee, protein. A quarterly menu with weekly invoice shock is how you work for the vendor."}],"inspectorLook":"They will not cost your menu. Your landlord will, indirectly.","jeffNote":"I give morels away sometimes because I want to. That is a decision I can see. Hidden giveaways in portioning are not generosity — they are fog."},{"slug":"solo","title":"Solo operator survival","kicker":"One body, a whole restaurant","minutes":"The whole day","summary":"A 16-seat room can be one person. It cannot be one person with no lists, no pars, and no plan for a sick day.","steps":[{"title":"Lists do the remembering","body":"Open, close, prep, order. If it is only in your head, it is not a system. It is a bet."},{"title":"Menu that one pair of hands can execute","body":"Every extra pan is a minute you do not have when the counter fills. Tight menu, honest specials."},{"title":"Prep the day before","body":"Morning you should be cooking and greeting, not starting stocks from zero."},{"title":"Write the sick-day plan","body":"Close. Call a backup. Shorten hours. Pick one and tell the regulars how they will hear about it."}],"inspectorLook":"Solo is not an excuse for missing logs. The code does not care that you are also the dishwasher.","jeffNote":"Seven years solo, twelve-hour days. The ticket rail and the checklists are how I still like the work. Pride without a system is just exhaustion."},{"slug":"inspection-day","title":"Health inspection day","kicker":"Be boring","minutes":"The visit is an hour · the prep is every day","summary":"Binder out, lights on, no speeches. Walk them through a room that is already right.","steps":[{"title":"The binder","body":"CFPM card, permit, pest log, temp logs, sick policy, allergen matrix, last inspection. One binder, labeled, not a junk drawer."},{"title":"The walk","body":"Greet. Wash your hands where they can see. Let them lead. Answer what was asked. Do not narrate your life story over a dirty gasket."},{"title":"If something is wrong","body":"Fix it in front of them if you can. Do not hide it. Hiding is the thing they remember."},{"title":"After","body":"Read the report before they leave if they will let you. Ask how to close any violation. Put the report in the binder. Do the thing that day."}],"inspectorLook":"They have seen every performance. Clean, documented, and calm is the only one that works.","jeffNote":"I want the visit to be dull. Dull means the systems worked. Drama means I got busy and got sloppy."}],"INSPECTION":[{"id":"i1","category":"Hands & health","title":"Hand sinks stocked and unblocked","detail":"Soap, hot water, towels, trash. Not used as a dump sink.","critical":true},{"id":"i2","category":"Hands & health","title":"Handwash signs posted","detail":"At every hand sink, including restroom.","critical":false},{"id":"i3","category":"Hands & health","title":"Sick worker policy signed and available","detail":"Staff can tell you what symptoms send them home.","critical":true},{"id":"i4","category":"Hands & health","title":"No bare-hand contact with ready-to-eat food","detail":"Gloves, tongs, or paper — after washing.","critical":true},{"id":"i5","category":"Hands & health","title":"Restroom clean, stocked, self-closing door if required","detail":"Soap, towels, trash, working toilet.","critical":false},{"id":"i6","category":"Temperature","title":"Stem thermometer present and calibrated","detail":"Ice-point 32°F. Extra battery or extra thermometer.","critical":true},{"id":"i7","category":"Temperature","title":"Cold holding at 41°F or below","detail":"Walk-in, reach-ins, prep rails. Logs match product.","critical":true},{"id":"i8","category":"Temperature","title":"Hot holding at 135°F or above","detail":"Check the actual food, not the well setting.","critical":true},{"id":"i9","category":"Temperature","title":"Cooking temperatures known and checked","detail":"Poultry 165, ground 155, fish/whole muscle 145.","critical":true},{"id":"i10","category":"Temperature","title":"Cooling done in shallow pans","detail":"No deep stockpots in the walk-in 'to cool overnight.'","critical":true},{"id":"i11","category":"Temperature","title":"Temperature logs filled for today","detail":"Morning and afternoon. Real numbers.","critical":false},{"id":"i12","category":"Storage","title":"Raw poultry on the bottom shelf, in pans","detail":"Nothing ready-to-eat under raw animal food.","critical":true},{"id":"i13","category":"Storage","title":"Food 6 inches off the floor","detail":"Shelving, not crates forever.","critical":false},{"id":"i14","category":"Storage","title":"Food covered and labeled","detail":"Name plus date on prepped TCS food.","critical":false},{"id":"i15","category":"Storage","title":"Date marks within 7 days","detail":"Opened and prepped TCS food. Toss what is tired.","critical":true},{"id":"i16","category":"Storage","title":"Chemicals stored away from food","detail":"Labeled bottles. SDS in the binder.","critical":true},{"id":"i17","category":"Warewash","title":"Sanitizer at the correct concentration","detail":"Strips match the chemical. Bucket not greasy.","critical":true},{"id":"i18","category":"Warewash","title":"Dish machine or three-bay set up correctly","detail":"Wash, rinse, sanitize. Drainboards. Air dry.","critical":true},{"id":"i19","category":"Warewash","title":"Wiping cloths in sanitizer","detail":"Not on the cutting board, not in a pocket.","critical":false},{"id":"i20","category":"Pest & outside","title":"No evidence of pests","detail":"Droppings, gnawing, fruit flies breeding in drains.","critical":true},{"id":"i21","category":"Pest & outside","title":"Pest contract and bait map on file","detail":"Current service. Technician license if required.","critical":false},{"id":"i22","category":"Pest & outside","title":"Dumpster lids closed, pad reasonably clean","detail":"Away from the door if possible.","critical":false},{"id":"i23","category":"Pest & outside","title":"Door sweeps; no daylight under the back door","detail":"Screen if the door stays open.","critical":false},{"id":"i24","category":"Facility","title":"Floors, walls, ceilings cleanable and in good repair","detail":"No peeling paint over the line. Coved base where required.","critical":false},{"id":"i25","category":"Facility","title":"Hood and Ansul currently tagged","detail":"Filters in, not sitting in a sink.","critical":true},{"id":"i26","category":"Facility","title":"Lighting working; shields where required","detail":"Over food and prep.","critical":false},{"id":"i27","category":"Facility","title":"Mop sink and floor drains clean","detail":"No standing sewage smell.","critical":false},{"id":"i28","category":"Facility","title":"Ice machine clean; scoop stored outside the bin","detail":"Handled scoop, not a cup.","critical":false},{"id":"i29","category":"Paper","title":"Valid permit posted (or application in process for pre-op)","detail":"CFPM card available.","critical":true},{"id":"i30","category":"Paper","title":"Allergen matrix at the pass","detail":"Staff can use it without guessing.","critical":false},{"id":"i31","category":"Paper","title":"Labor posters, choke chart, occupancy posted","detail":"Current year posters.","critical":false},{"id":"i32","category":"Paper","title":"Shellfish tags or other required source records if you serve them","detail":"90 days on tags if applicable.","critical":true}],"QUIZ":[{"id":"q1","prompt":"Where does raw chicken belong in the walk-in?","choices":["Top shelf, it is expensive","Next to the cut lettuce so you remember it","Bottom shelf, in a pan, under everything ready-to-eat","Wherever there is space"],"answer":2,"why":"Drip is the risk. Poultry cooks to the highest temperature, so it lives at the bottom."},{"id":"q2","prompt":"Cold holding for TCS food must be at or below:","choices":["50°F","45°F","41°F","35°F"],"answer":2,"why":"41°F is the line. A rail at 45°F is not 'close enough.'"},{"id":"q3","prompt":"Poultry is safely cooked when the thickest part hits:","choices":["145°F","155°F","165°F","180°F"],"answer":2,"why":"165°F for poultry. Use a stem thermometer, not the color of the juice."},{"id":"q4","prompt":"The correct order for warewashing is:","choices":["Sanitize, wash, rinse","Wash, rinse, sanitize, air dry","Wash, sanitize, rinse, towel dry","Rinse, sanitize, wash"],"answer":1,"why":"Sanitizer only works on a clean surface. Towels re-soil. Air dry."},{"id":"q5","prompt":"Opened chili held at 41°F must be discarded after:","choices":["3 days","7 days including the day it was made","14 days if it still smells fine","When you remember"],"answer":1,"why":"Seven-day date mark for TCS food at 41°F, counting today."},{"id":"q6","prompt":"A cook has been vomiting since 4 a.m. The correct move is:","choices":["Come in, stay off the line, run the register","Come in if you wear two pairs of gloves","Stay home and follow the return-to-work policy","Come in late after a nap"],"answer":2,"why":"Norovirus and friends do not care about your labor budget. Stay home."},{"id":"q7","prompt":"Hot food must be held at or above:","choices":["120°F","135°F","165°F","212°F"],"answer":1,"why":"135°F hot hold. Reheating to 165°F is a different step."},{"id":"q8","prompt":"A guest asks if the vegan special has dairy. You are not sure. You:","choices":["Say it should be fine","Say you are vegan-friendly so it is fine","Check the card / recipe and answer from that","Ask the table next to them"],"answer":2,"why":"Guessing is how people get hurt. The card is the answer."},{"id":"q9","prompt":"Cooling a pot of soup the right way means:","choices":["Lid on, in the walk-in, check tomorrow","Shallow pans, 135 to 70 in 2 hours, then to 41 in 4 more","On the counter until it 'stops steaming'","In the freezer in the stockpot"],"answer":1,"why":"The two-stage cooling curve is the law and the science."},{"id":"q10","prompt":"Sanitizer buckets should be:","choices":["Mixed by eye, 'stronger is better'","Tested with the matching strips at the right ppm","Left overnight so they stay potent","Used as a first wash instead of soap"],"answer":1,"why":"Too weak does nothing. Too strong is not more professional. Strips."},{"id":"q11","prompt":"A delivery of chicken arrives at 48°F. You:","choices":["Put it in the walk-in to catch up","Cook it all immediately","Reject the product and call the vendor","Sign and deal with it later"],"answer":2,"why":"You cannot cool your way out of a temperature-abused delivery. Refuse it."},{"id":"q12","prompt":"Gloves should be changed:","choices":["Once a shift","When they look dirty, only","After raw protein, after contamination, and before ready-to-eat — and after washing hands","Never if they are nitrile"],"answer":2,"why":"Gloves are a tool, not a force field. Wash, then new gloves."}],"ASSESSMENT":[{"id":"a1","prompt":"Where is the project, honestly?","options":[{"id":"idea","label":"Still a concept — no site yet","points":8},{"id":"site","label":"Site picked or lease in motion","points":14},{"id":"build","label":"Build-out or renovation underway","points":16},{"id":"permits","label":"Ready to file or already filing with health","points":18},{"id":"open","label":"Open, and trying to get tighter","points":15}]},{"id":"a2","prompt":"Have you formed the entity and pulled an EIN?","options":[{"id":"no","label":"Not yet","points":4},{"id":"llc","label":"LLC filed, EIN still pending","points":12},{"id":"both","label":"LLC and EIN in the binder","points":20}]},{"id":"a3","prompt":"Health department — have you spoken to them?","options":[{"id":"no","label":"Not yet. I figured I would when the room was pretty","points":3},{"id":"called","label":"I have the packet and a name","points":12},{"id":"plans","label":"Plan review in or approved","points":18},{"id":"permit","label":"Permit in hand or pre-op scheduled","points":20}]},{"id":"a4","prompt":"Certified Food Protection Manager","options":[{"id":"none","label":"Nobody has the cert yet","points":4},{"id":"booked","label":"Class is booked","points":12},{"id":"card","label":"Card in the binder","points":20}]},{"id":"a5","prompt":"Kitchen systems — hood, sinks, cold holding","options":[{"id":"unknown","label":"I have not walked it with a checklist","points":4},{"id":"gaps","label":"I know the gaps and have a bid","points":12},{"id":"ready","label":"Hood tagged, sinks right, boxes holding 41°F","points":20}]},{"id":"a6","prompt":"Menu costing","options":[{"id":"vibes","label":"I know what I want to cook","points":6},{"id":"prices","label":"I have prices, not plate costs","points":12},{"id":"cards","label":"Recipe cards with costs and allergens","points":20}]},{"id":"a7","prompt":"Staffing reality","options":[{"id":"solo-hope","label":"It will just be me, no written backup","points":8},{"id":"solo-plan","label":"Solo (or tiny crew) with lists and a sick-day plan","points":16},{"id":"crew","label":"Crew hired and training on the books","points":18}]},{"id":"a8","prompt":"Biggest landmine right now","options":[{"id":"permits","label":"Permits and timelines — I cannot see the order","points":6},{"id":"inspect","label":"Passing inspection","points":8},{"id":"money","label":"Cash through the first 90 days","points":8},{"id":"systems","label":"Daily systems so it does not fall apart","points":10},{"id":"all","label":"All of it. I need a sequence.","points":5}]}],"PERMITS":[{"id":"llc","title":"NY LLC filing","agency":"NYS Department of State","wait":"1–10 days","dependsOn":[],"notes":"Do this before the bank, the EIN conversation with vendors, and most applications. Publication rules still exist in many counties."},{"id":"ein","title":"EIN","agency":"IRS","wait":"Same day online","dependsOn":["llc"],"notes":"Free. Print the confirmation. You will show it a dozen times."},{"id":"bank","title":"Business bank account","agency":"Your bank","wait":"1 day","dependsOn":["llc","ein"],"notes":"Needed before deposits, Square payouts, and vendor drafts."},{"id":"sales-tax","title":"Certificate of Authority","agency":"NYS Tax and Finance","wait":"Days to 2 weeks","dependsOn":["ein"],"notes":"Register before you sell. Post it."},{"id":"insurance","title":"Liability + workers' comp certificates","agency":"Carrier","wait":"3–10 days","dependsOn":["llc"],"notes":"Landlord, sometimes the town, and you after the first incident."},{"id":"co","title":"Certificate of Occupancy / change of use","agency":"City or town building department","wait":"2–8 weeks if a change of use","dependsOn":[],"notes":"Confirm food service is an allowed use before you fund a build-out."},{"id":"building","title":"Building / plumbing / electrical permits","agency":"Building department","wait":"Tied to scope","dependsOn":["co"],"notes":"Hood work, walls, new sinks. Unpermitted work fails health and insurance."},{"id":"fire","title":"Fire marshal / suppression tag","agency":"Fire department","wait":"Scheduled inspection","dependsOn":["building"],"notes":"Ansul current. Exits and occupant load posted. Do this before the health pre-op."},{"id":"plan-review","title":"Health plan review","agency":"County health department","wait":"2–6 weeks","dependsOn":["co"],"notes":"Layout, finishes, menu, equipment specs. Call them the week the lease is real."},{"id":"cfpm","title":"Certified Food Protection Manager","agency":"Accredited course (e.g. ServSafe)","wait":"1–2 days of class","dependsOn":[],"notes":"Can run in parallel with everything. Do not leave it for the week of opening."},{"id":"food-permit","title":"Food service permit + pre-operational inspection","agency":"County health department","wait":"2–4 weeks after a complete packet, then a scheduled walk","dependsOn":["plan-review","cfpm","fire","insurance"],"notes":"This is the gate. The Inspection tool in this app is the dress rehearsal."},{"id":"sla","title":"Liquor license (only if you serve)","agency":"NYS Liquor Authority","wait":"Often 3–8 months","dependsOn":["llc","co"],"notes":"Start the day the lease is real or skip it and open as a diner. Do not pin your date on SLA."},{"id":"sign","title":"Sign permit","agency":"Municipality","wait":"2–6 weeks","dependsOn":["co"],"notes":"Optional for opening the door. Not optional if the sign is already built."}],"LAUNCH_DAYS":[{"day":1,"title":"Open quiet","focus":"Systems over spectacle.","mustDo":["Run the opening list and log temps before the door turns.","Serve a tight menu — not the whole dream board.","Close on the list even if you are dragging."]},{"day":2,"title":"Fix yesterday","focus":"One operational snag, not a new menu.","mustDo":["Write the three things that broke.","Fix the printer, the 86 communication, or the rail — whichever bit you.","Thank the people who came anyway."]},{"day":3,"title":"Pars, not panic","focus":"Order from what sold, not from fear of 86.","mustDo":["Count the walk-in.","Cut anything that did not move.","Keep the allergen card current if a special ran."]},{"day":5,"title":"First Friday","focus":"Labor and ticket times.","mustDo":["Do not add menu items because you are bored.","Pre-close the pit during the lull.","Cash drawer counted twice."]},{"day":7,"title":"Week one close","focus":"Numbers and a night off the adrenaline.","mustDo":["Food purchases vs. food sales — even a rough number.","Pest check: dumpster, door sweep, floor drains.","Write next week's special from on-hand product."]},{"day":10,"title":"Inspection posture","focus":"Assume they walk in today.","mustDo":["Logs real, not reconstructed.","Walk-in photographed. If you would not post it, fix it.","Sanitizer strips in date."]},{"day":14,"title":"Two-week menu trim","focus":"Kill a loser, support a winner.","mustDo":["Drop the item that fights the line.","Re-cost anything with a jumped invoice.","Ask three regulars what they would miss."]},{"day":21,"title":"Labor honesty","focus":"Schedule to the room you have.","mustDo":["If you are solo, the sick-day plan is written and posted in your own phone.","Cut a shift that is pride, not covers.","Train one backup task (deposit, close, or order)."]},{"day":30,"title":"Stay-open review","focus":"Habits, not heroics.","mustDo":["Open/close lists still in use — or rewrite them so they will be.","Binder complete: permit, CFPM, pest, temps, last invoice set.","Pick one playbook to retrain this week. Not all of them."]}],"TRUCKS":[{"id":"t1","title":"A truck is still a food service establishment","body":"New York treats mobile units as food service. You still need a permit, a certified person, handwashing, and a commissary in most counties. A pretty trailer is not a loophole."},{"id":"t2","title":"Commissary is the mothership","body":"Prep, storage, dumping, and water often must happen at an approved commissary — not a home kitchen. Get the letter from the commissary operator and keep it with the mobile permit."},{"id":"t3","title":"Water, waste, and the hand sink","body":"Potable water tank, waste tank larger than the fresh tank, a hand sink that works when you are parked on a grade. Inspectors will ask you to turn it on."},{"id":"t4","title":"Fire suppression on the truck","body":"If you have a fryer or a griddle under a hood, you need suppression and an extinguisher that matches the fuel. Event promoters will ask before they let you on the grass."},{"id":"t5","title":"Where you park is a permit too","body":"City streets, private lots, festivals, and county fairs are different permissions. Utica and Oneida County are not the same conversation as a private wedding. Get it in writing."},{"id":"t6","title":"Menu discipline on a 6-foot line","body":"If it does not fit in the wells you have, it is not on the truck. Cost it. Allergen it. 86 with a sign, not a shrug in a generator roar."},{"id":"t7","title":"Same storage rules, smaller box","body":"Raw still goes below ready-to-eat. Date marks still exist. A cooler packed like a Tetris accident will be 50°F in the center by lunch."},{"id":"t8","title":"Consulting the truck the same way as the room","body":"Golden Ticket treats carts and trucks as a launch: entity, commissary, mobile permit, fire, event calendar, and a close-down list. Do not build the brand before the tank test."}],"GRANTS":[{"title":"Empire State Development","body":"NY's economic development agency. Small business programs, regional offices, and grant/loan products change with the budget year. Golden Ticket is built to sit beside ESD's mission: more businesses that survive year one.","href":"https://esd.ny.gov/"},{"title":"Mohawk Valley EDGE","body":"Regional partner for Oneida and the valley. Site, incentive, and connection work for operators who are actually going to hire and stay.","href":"https://www.mvedge.org/"},{"title":"MVCC thINCubator (Utica)","body":"Where this platform is meant to live as a free tool for people who will do the work. Workshops, mentors, and a front door in Utica — not a theory from the city.","href":"https://www.mvcc.edu/"},{"title":"NY Business Express","body":"One door for many state filings: sales tax, licenses, and the map of what your county still wants on paper.","href":"https://www.businessexpress.ny.gov/"},{"title":"County health + local IDA","body":"Your inspector and your industrial development / local development corp are not the enemy. Call them early. Bring a complete packet. That is the whole strategy.","href":"https://www.ocgov.net/"}]};
+    const storeKey = "golden-ticket-progress";
+    function load() {
+      try { return JSON.parse(localStorage.getItem(storeKey) || "{}"); } catch { return {}; }
+    }
+    function save(s) { localStorage.setItem(storeKey, JSON.stringify(s)); }
+    let state = Object.assign({ checks: {}, inspect: {}, quiz: {}, assessment: {} }, load());
+    function route() {
+      const hash = (location.hash || "#/").replace(/^#/, "") || "/";
+      return hash.startsWith("/") ? hash : "/" + hash;
+    }
+    function pct() {
+      const n = DATA.TASKS.filter(t => state.checks[t.id]).length;
+      return Math.round((n / DATA.TASKS.length) * 100);
+    }
+    function esc(s) {
+      return String(s).replace(/[&<>"']/g, c => ({"&":"&","<":"<",">":">","\"":""","'":"&#39;"}[c]));
+    }
+    function layout(inner) {
+      const links = [
+        ["/app","Board"],["/blueprint","Blueprint"],["/permits","Permits"],
+        ["/inspection","Inspection"],["/playbooks","Playbooks"],["/launch","30 days"],
+        ["/quiz","Quiz"],["/trucks","Trucks"],["/grants","Grants"],["/assessment","Assessment"]
+      ];
+      const r = route();
+      return `<div class="wrap layout">
+        <aside class="board">
+          <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700">Your ticket</div>
+          <div style="font-family:Fraunces,serif;font-size:36px;color:var(--navy)">${pct()}%</div>
+          <div style="font-size:13px;color:var(--muted)">${DATA.TASKS.filter(t=>state.checks[t.id]).length} of ${DATA.TASKS.length} tasks</div>
+          ${links.map(([h,l]) => `<a href="#${h}" class="${r===h || (h!=='/app' && r.startsWith(h)) ? 'on':''}">${l}</a>`).join("")}
+        </aside>
+        <div>${inner}</div>
+      </div>`;
+    }
+    function home() {
+      return `<section class="hero"><div class="wrap grid2">
+        <div>
+          <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);font-weight:700">New York · Golden Rule Consulting</div>
+          <h1>Launch the restaurant.<span class="gold"> Stay open.</span></h1>
+          <p style="color:rgba(251,247,240,.75);max-width:520px;line-height:1.6">Golden Ticket is the full sequence — LLC to first 30 days — built by Chef Jeff Golden from 42 years on New York lines, including a 16-seat diner he still runs himself.</p>
+          <p style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px">
+            <a class="btn" href="#/app">Open the platform</a>
+            <a class="btn ghost" style="color:var(--cream);border-color:rgba(255,255,255,.25)" href="#/assessment">Free readiness score</a>
+          </p>
+        </div>
+        <img class="cover" src="og.jpg" alt="Golden Ticket" />
+      </div></section>
+      <section class="wrap" style="padding:56px 16px">
+        <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700">The reality</div>
+        <h2 style="font-size:34px;color:var(--navy)">Most new rooms do not fail because of the food.</h2>
+        <p class="muted" style="max-width:620px">They fail the permit calendar, the first inspection, and the first 90 days of sloppy systems.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:28px">
+          <div class="card"><h3 style="font-size:32px;margin:0;color:var(--navy)">25–30%</h3><p>close in year one</p></div>
+          <div class="card"><h3 style="font-size:32px;margin:0;color:var(--navy)">60%+</h3><p>gone by year five</p></div>
+          <div class="card"><h3 style="font-size:32px;margin:0;color:var(--navy)">42 yrs</h3><p>on the line — Turning Stone, Colgate, Golden's Food</p></div>
+        </div>
+      </section>`;
+    }
+    function board() {
+      const next = DATA.TASKS.find(t => !state.checks[t.id]);
+      const phase = next && DATA.PHASES.find(p => p.id === next.phase);
+      return layout(`<div class="card" style="background:var(--navy);color:var(--cream);border:0">
+        <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft)">Golden Ticket</div>
+        <h1 style="margin:8px 0">Here is the board.</h1>
+        <p style="opacity:.75">From the LLC to the first 30 days. Check off what is done.</p>
+      </div>
+      <div class="card" style="margin-top:16px">
+        <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700">Next right thing</div>
+        <h2 style="color:var(--navy)">${next ? esc(next.title) : "Blueprint complete"}</h2>
+        <p class="muted">${next ? esc(next.summary) : "Stay inspection-ready."}</p>
+        <p>${phase ? "<small>"+esc(phase.title)+" · "+esc(next.typicalDays)+"</small>" : ""}</p>
+        <a class="btn" href="#/blueprint">Open the blueprint</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:16px">
+        ${DATA.PHASES.map(p => {
+          const items = DATA.TASKS.filter(t => t.phase === p.id);
+          const done = items.filter(t => state.checks[t.id]).length;
+          return `<a class="card" href="#/blueprint" style="text-decoration:none">
+            <small class="muted">${p.number} · ${done}/${items.length}</small>
+            <h3 style="margin:6px 0;color:var(--navy)">${esc(p.title)}</h3>
+            <div style="height:6px;background:var(--line);border-radius:99px"><div style="height:6px;width:${items.length?done/items.length*100:0}%;background:var(--gold);border-radius:99px"></div></div>
+          </a>`;
+        }).join("")}
+      </div>`);
+    }
+    function blueprint() {
+      return layout(`<h1 style="color:var(--navy)">From the LLC to the first service.</h1>
+        <p class="muted">Every required task is something that has delayed or sunk a New York opening.</p>
+        ${DATA.PHASES.map(p => {
+          const items = DATA.TASKS.filter(t => t.phase === p.id);
+          return `<section style="margin-top:28px">
+            <h2 style="color:var(--navy)">${p.number} · ${esc(p.title)}</h2>
+            <p class="muted">${esc(p.intent)}</p>
+            ${items.map(t => `<article class="task">
+              <label style="display:flex;gap:12px;align-items:flex-start">
+                <input type="checkbox" data-check="${t.id}" ${state.checks[t.id]?"checked":""} />
+                <span>
+                  <strong>${esc(t.title)}</strong>
+                  ${t.required ? ' <small>Required</small>' : ' <small>If it applies</small>'}
+                  <div class="muted">${esc(t.summary)}</div>
+                  <p><b>Why:</b> ${esc(t.why)}</p>
+                  <ol>${t.how.map(h => "<li>"+esc(h)+"</li>").join("")}</ol>
+                </span>
+              </label>
+            </article>`).join("")}
+          </section>`;
+        }).join("")}`);
+    }
+    function permits() {
+      return layout(`<h1 style="color:var(--navy)">What to file, in what order.</h1>
+        ${DATA.PERMITS.map((s,i) => `<article class="task"><small class="gold">${String(i+1).padStart(2,"0")} · ${esc(s.agency)} · ${esc(s.wait)}</small>
+          <h3 style="margin:6px 0;color:var(--navy)">${esc(s.title)}</h3><p>${esc(s.notes)}</p></article>`).join("")}`);
+    }
+    function inspection() {
+      return layout(`<h1 style="color:var(--navy)">Walk your own room first.</h1>
+        ${DATA.INSPECTION.map(i => `<article class="task">
+          <strong>${esc(i.title)}</strong> ${i.critical?"<small style=color:var(--danger)>Critical</small>":""}
+          <div class="muted">${esc(i.detail)}</div>
+          <p>
+            <button data-ins="${i.id}" data-mark="pass">Pass</button>
+            <button data-ins="${i.id}" data-mark="fail">Fail</button>
+            <button data-ins="${i.id}" data-mark="na">N/A</button>
+            <small>${state.inspect[i.id]||""}</small>
+          </p>
+        </article>`).join("")}`);
+    }
+    function playbooks() {
+      if (route().startsWith("/playbook/")) {
+        const slug = route().slice("/playbook/".length);
+        const b = DATA.PLAYBOOKS.find(p => p.slug === slug);
+        if (!b) return layout("<p>Not found.</p>");
+        return layout(`<a href="#/playbooks">All playbooks</a>
+          <h1 style="color:var(--navy)">${esc(b.title)}</h1>
+          <p class="muted">${esc(b.summary)}</p>
+          ${b.steps.map((s,i)=>`<article class="task"><small>${String(i+1).padStart(2,"0")}</small><h3>${esc(s.title)}</h3><p>${esc(s.body)}</p></article>`).join("")}
+          <div class="card" style="background:var(--navy);color:var(--cream);border:0">
+            <h3 class="gold">What the inspector looks for</h3><p>${esc(b.inspectorLook)}</p>
+            <h3 class="gold">Jeff's note</h3><p>${esc(b.jeffNote)}</p>
+          </div>`);
+      }
+      return layout(`<h1 style="color:var(--navy)">Operational playbooks</h1>
+        ${DATA.PLAYBOOKS.map(p => `<a class="task" href="#/playbook/${p.slug}" style="display:block;text-decoration:none">
+          <small class="gold">${esc(p.kicker)}</small><h3 style="color:var(--navy)">${esc(p.title)}</h3>
+          <p class="muted">${esc(p.summary)}</p></a>`).join("")}`);
+    }
+    function launch() {
+      return layout(`<h1 style="color:var(--navy)">The first 30 days.</h1>
+        ${DATA.LAUNCH_DAYS.map(d => `<article class="task"><small class="gold">Day ${d.day}</small><h3>${esc(d.title)}</h3>
+          <p class="muted">${esc(d.focus)}</p><ul>${d.mustDo.map(m=>"<li>"+esc(m)+"</li>").join("")}</ul></article>`).join("")}`);
+    }
+    function quiz() {
+      return layout(`<h1 style="color:var(--navy)">Twelve questions. No trick poetry.</h1>
+        ${DATA.QUIZ.map((q,i) => `<article class="task"><small>${String(i+1).padStart(2,"0")}</small>
+          <h3>${esc(q.prompt)}</h3>
+          ${q.choices.map((c,idx) => `<div><label><input type="radio" name="${q.id}" data-quiz="${q.id}" value="${idx}" ${state.quiz[q.id]===idx?"checked":""}/> ${esc(c)}</label></div>`).join("")}
+          ${state.quiz[q.id]!==undefined ? "<p class=muted>"+esc(q.why)+"</p>" : ""}
+        </article>`).join("")}`);
+    }
+    function assessment() {
+      const max = DATA.ASSESSMENT.reduce((s,q)=>s+Math.max(...q.options.map(o=>o.points)),0);
+      const score = DATA.ASSESSMENT.reduce((s,q)=>{
+        const o = q.options.find(x => x.id === state.assessment[q.id]);
+        return s + (o ? o.points : 0);
+      },0);
+      const done = DATA.ASSESSMENT.every(q => state.assessment[q.id]);
+      const p = Math.round(score/max*100);
+      return layout(`<h1 style="color:var(--navy)">Launch readiness assessment</h1>
+        ${DATA.ASSESSMENT.map((q,i)=>`<fieldset class="task"><legend><b>${String(i+1).padStart(2,"0")}</b> ${esc(q.prompt)}</legend>
+          ${q.options.map(o=>`<div><label><input type="radio" name="${q.id}" data-as="${q.id}" value="${o.id}" ${state.assessment[q.id]===o.id?"checked":""}/> ${esc(o.label)}</label></div>`).join("")}
+        </fieldset>`).join("")}
+        ${done ? `<div class="card" style="background:var(--navy);color:var(--cream);border:0"><h2 class="gold">Your score: ${p}</h2>
+          <p>${p>=80?"Strong binder.":p>=55?"A foundation with gaps.":"You are early — get the sequence straight before finishes."}</p>
+          <a class="btn" href="#/blueprint">Open the blueprint</a></div>` : "<p class=muted>Answer all eight to generate the score.</p>"}`);
+    }
+    function trucks() {
+      return layout(`<h1 style="color:var(--navy)">A truck is not a shortcut.</h1>
+        ${DATA.TRUCKS.map((t,i)=>`<article class="task"><small>${String(i+1).padStart(2,"0")}</small><h3>${esc(t.title)}</h3><p>${esc(t.body)}</p></article>`).join("")}`);
+    }
+    function grants() {
+      return layout(`<h1 style="color:var(--navy)">Help that already exists. Use it.</h1>
+        ${DATA.GRANTS.map(g=>`<a class="task" href="${g.href}" target="_blank" rel="noreferrer" style="display:block;text-decoration:none"><h3 style="color:var(--navy)">${esc(g.title)}</h3><p class="muted">${esc(g.body)}</p></a>`).join("")}`);
+    }
+    function about() {
+      return `<article class="wrap" style="max-width:720px;padding:48px 16px">
+        <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700">Golden Rule Consulting</div>
+        <h1 style="color:var(--navy);font-size:40px">Chef Jeff Golden</h1>
+        <p class="muted" style="font-size:18px">Forty-two years in New York hospitality. High-volume rooms, classrooms, and a 16-seat diner he still opens himself.</p>
+        <h2 style="color:var(--navy)">The line</h2>
+        <p>Turning Stone Resort Casino. Colgate University dining. Compass Group classrooms in the 1990s teaching health and safety. Then Golden's Food LLC at 244 Genesee Street in Utica: breakfast, lunch, chalkboard specials, vegan plates, morels when the season is kind.</p>
+        <h2 style="color:var(--navy)">Why the ticket exists</h2>
+        <p>Good concepts die of permits, failed inspections, and the first 90 days without a close-down list. The platform is free. Paid sessions are for operators who will do the work.</p>
+        <a class="btn" href="#/contact">Book a session</a>
+      </article>`;
+    }
+    function partners() {
+      return `<article class="wrap" style="max-width:720px;padding:48px 16px">
+        <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700">For government & economic development</div>
+        <h1 style="color:var(--navy)">A tool that matches the mission.</h1>
+        <p class="muted">Empire State Development wants fewer small-business funerals. County health wants operators who show up ready. Golden Ticket is the practical layer between those two sentences.</p>
+        <div class="card">Statewide sequence for restaurant and mobile food launches.</div>
+        <div class="card" style="margin-top:10px">Measurable readiness: blueprint completion, inspection self-score, CFPM status.</div>
+        <div class="card" style="margin-top:10px">Ready for pilots in the Mohawk Valley — Utica, Oneida County, MVCC thINCubator.</div>
+        <p><a class="btn" href="#/contact">Schedule a partnership talk</a></p>
+      </article>`;
+    }
+    function contact() {
+      return `<article class="wrap" style="max-width:640px;padding:48px 16px">
+        <h1 style="color:var(--navy)">Talk to Jeff.</h1>
+        <p class="muted">Strategy sessions, launch walk-throughs, and partnership talks. The platform stays free.</p>
+        <p>Golden's Food · 244 Genesee Street, Utica, NY<br><a href="mailto:jagtech00@gmail.com">jagtech00@gmail.com</a></p>
+        <p><a class="btn" href="mailto:jagtech00@gmail.com?subject=Golden%20Ticket%20session">Email Jeff</a></p>
+      </article>`;
+    }
+    function render() {
+      const r = route();
+      let html = "";
+      if (r === "/" ) html = home();
+      else if (r === "/app") html = board();
+      else if (r === "/blueprint") html = blueprint();
+      else if (r === "/permits") html = permits();
+      else if (r === "/inspection") html = inspection();
+      else if (r === "/playbooks" || r.startsWith("/playbook/")) html = playbooks();
+      else if (r === "/launch") html = launch();
+      else if (r === "/quiz") html = quiz();
+      else if (r === "/assessment") html = assessment();
+      else if (r === "/trucks") html = trucks();
+      else if (r === "/grants") html = grants();
+      else if (r === "/about") html = about();
+      else if (r === "/partners") html = partners();
+      else if (r === "/contact") html = contact();
+      else html = home();
+      document.getElementById("root").innerHTML = html;
+      document.querySelectorAll("[data-check]").forEach(el => {
+        el.addEventListener("change", () => {
+          state.checks[el.getAttribute("data-check")] = el.checked;
+          save(state); render();
         });
-        
-        // Initialize everything
-        function init() {
-            initializeTailwind();
-            
-            // Optional: subtle scroll animation for feature cards
-            const cards = document.querySelectorAll('.feature-card');
-            cards.forEach((card, i) => {
-                card.style.transitionDelay = (i * 40) + 'ms';
-            });
-            
-            // Easter egg: clicking logo scrolls to top
-            const logo = document.querySelector('nav img');
-            if (logo) {
-                logo.style.cursor = 'pointer';
-                logo.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
-            }
-            
-            console.log('%c[Golden Rule] Landing page initialized successfully.', 'color:#64748b');
-        }
-        
-        window.onload = init;
-    </script>
+      });
+      document.querySelectorAll("[data-ins]").forEach(el => {
+        el.addEventListener("click", () => {
+          state.inspect[el.getAttribute("data-ins")] = el.getAttribute("data-mark");
+          save(state); render();
+        });
+      });
+      document.querySelectorAll("[data-quiz]").forEach(el => {
+        el.addEventListener("change", () => {
+          state.quiz[el.getAttribute("data-quiz")] = Number(el.value);
+          save(state); render();
+        });
+      });
+      document.querySelectorAll("[data-as]").forEach(el => {
+        el.addEventListener("change", () => {
+          state.assessment[el.getAttribute("data-as")] = el.value;
+          save(state); render();
+        });
+      });
+      window.scrollTo(0,0);
+    }
+    window.addEventListener("hashchange", render);
+    render();
+  </script>
 </body>
 </html>
