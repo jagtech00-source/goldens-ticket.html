@@ -13,4 +13,4 @@ Free readiness assessment, 9-phase NY blueprint (LLC → first 30 days), **20 cl
 Progress saves in the browser.
 
 Golden's Food · 244 Genesee Street, Utica, NY  
-jagtech00@gmail.com
+goldensruleconsulting@gmail.com
